@@ -66,7 +66,7 @@
                         if (data.response) {
                             $('#translation').html("<p><b>GoogleTranslate:</b> " + data.response + "</p>");
                         } else if (data.error) {
-                            $('#translation').html("<p><b>Error:</b> " + data.error + "</p>");
+                            $('#translation').html("<p><b>Error:</b> " + data.error + "</p><p><b>Details:</b> " + data.details + "</p>");
                         } else {
                             $('#translation').html("<p><b>This application received an unexpected response</b> ");
                         }
