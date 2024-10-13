@@ -65,6 +65,7 @@ def translate():
         params = {
             'q': text_to_translate,
             'target': target_language,
+            #'key': "invalid_key"
             'key': GOOGLE_API_KEY
         }
 
@@ -79,7 +80,10 @@ def translate():
         
 
         # Extract the translated text from the API response
+        print("translated text returned: "+ str(response.json()))
+        #translated_text = response.json().translations[0].translatedText
         translated_text = response.json()['data']['translations'][0]['translatedText']
+        print("translated text parsed: "+ translated_text)
 
         # Return the translated text
         return jsonify({"translated_text": translated_text})
