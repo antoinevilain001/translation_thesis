@@ -33,6 +33,7 @@
                 event.preventDefault();
 
                 var user_input = $('#promptChatGPT').val();
+                $('#response').html("<p><b>Processing</b></p>");
 
                 $.ajax({
                     url: '/ask',
@@ -43,6 +44,8 @@
                             $('#response').html("<p><b>ChatGPT:</b> " + data.response + "</p>");
                         } else if (data.error) {
                             $('#response').html("<p><b>Error:</b> " + data.error + "</p>");
+                        } else {
+                            $('#response').html("<p><b>This application received an unexpected response</b> ");
                         }
                     }
                 });
@@ -51,17 +54,26 @@
                 event.preventDefault();
 
                 var user_input = $('#promptGoogleTranslate').val();
+                $('#translation').html("<p><b>Processing</b></p>");
+                console.log("Posted to GoogleTranslate");
 
                 $.ajax({
                     url: '/translate',
                     method: 'POST',
                     data: { text: user_input },
                     success: function(data) {
+                        console.log("Ajax success");
                         if (data.response) {
                             $('#translation').html("<p><b>GoogleTranslate:</b> " + data.response + "</p>");
                         } else if (data.error) {
                             $('#translation').html("<p><b>Error:</b> " + data.error + "</p>");
+                        } else {
+                            $('#translation').html("<p><b>This application received an unexpected response</b> ");
                         }
+                    },
+                    error: function(data) {
+                        console.log("Ajax error");
+                        $('#translation').html("<p><b>Error: </b>the GoogleTranslate call was unsuccessful</p>");
                     }
                 });
             });

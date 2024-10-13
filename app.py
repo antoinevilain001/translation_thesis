@@ -52,7 +52,7 @@ def translate():
     # return jsonify({"response": "hi"})
     
     if not text_to_translate:
-        return jsonify({"error": "Text is required for translation"}), 400
+        return jsonify({"error": "Text is required for translation"})
     
     target_language = 'es'  # Default to Spanish
 
@@ -73,8 +73,9 @@ def translate():
 
         # Check if the response is successful
         if response.status_code != 200:
-            return jsonify({"error": "Translation API request failed"}), 499
-            return jsonify({"error": "Translation API request failed", "details": response.json()}), 500
+            print("Google Translate API has returned an error")
+            #return jsonify({"error": "Translation API request failed"})
+            return jsonify({"error": "Translation API request failed" + response.json()})
 
         # Extract the translated text from the API response
         translated_text = response.json()['data']['translations'][0]['translatedText']
@@ -84,7 +85,7 @@ def translate():
 
     except Exception as e:
         print(str(e))
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"error": str(e)})
 
 if __name__ == '__main__':
     app.run(debug=True)
