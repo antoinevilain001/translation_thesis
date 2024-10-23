@@ -40,13 +40,18 @@ def compareResponses():
             messages=[
                 {
                     "role": "system",
-                    "content": """You are a helpful assistant. 
-                    I am trying to decide between two """ + target_language_selector + """translations for the following""" + source_language_selector + """phrase:
-                    """ + phrase_to_translate
+                    "content": (
+                        f"You are a helpful assistant. "
+                        f"I am trying to decide between two {target_language_selector} translations "
+                        f"for the following {source_language_selector} phrase: {phrase_to_translate} \n"
+                    )
                 },
                 {
                     "role": "user",
-                    "content": "Translation1: " + googleTranslate_translation + ", Translation2: " + chatGPT_translation
+                    "content": (
+                        f"Translation 1: {googleTranslate_translation} \n"
+                        f"Translation 2: {chatGPT_translation} "
+                    )
                 }
             ]
         )
