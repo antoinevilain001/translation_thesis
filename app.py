@@ -23,6 +23,15 @@ def compareResponses():
     phrase_to_translate = request.form['phrase_to_translate']
     googleTranslate_translation = request.form['googleTranslate_translation']
     chatGPT_translation = request.form['chatGPT_translation']
+    language_input = request.form['option']
+    source_language_selector = ""
+    target_language_selector = ""
+    if (language_input == "eng_to_spa"):
+        source_language_selector = "English"
+        target_language_selector = "Spanish"
+    elif (language_input == "spa_to_eng"):
+        source_language_selector = "Spanish"
+        target_language_selector = "English"
     
     try:
         # Use the OpenAI API to get a response from ChatGPT
@@ -32,7 +41,7 @@ def compareResponses():
                 {
                     "role": "system",
                     "content": """You are a helpful assistant. 
-                    I am trying to decide between two English translations for the following Spanish phrase:
+                    I am trying to decide between two """ + target_language_selector + """translations for the following""" + source_language_selector + """phrase:
                     """ + phrase_to_translate
                 },
                 {
