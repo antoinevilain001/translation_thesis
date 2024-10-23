@@ -10,10 +10,141 @@ client = OpenAI(
     # This is the default and can be omitted
     api_key=os.environ.get("OPENAI_API_KEY"),
 )
+# Load your Google Cloud API key from environment variables or directly set it
+GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')  # Or hardcode your API key (not recommended)
 
 @app.route('/')
 def home():
     return render_template('index.html')
+
+
+@app.route('/compareResponses', methods=['POST'])
+def compareResponses():
+    phrase_to_translate = request.form['phrase_to_translate']
+    googleTranslate_translation = request.form['googleTranslate_translation']
+    chatGPT_translation = request.form['chatGPT_translation']
+    
+    try:
+        # Use the OpenAI API to get a response from ChatGPT
+        completion = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {
+                    "role": "system",
+                    "content": """You are a helpful assistant. 
+                    I am trying to decide between two English translations for the following Spanish phrase:
+                    """ + phrase_to_translate
+                },
+                {
+                    "role": "user",
+                    "content": "Translation1: " + googleTranslate_translation + ", Translation2: " + chatGPT_translation
+                }
+            ]
+        )
+
+        print(completion.choices[0].message)
+        result = completion.choices[0].message.content  # Correctly access content
+        return jsonify({"response": result})
+        # return completion.choices[0]
+    
+    except Exception as e:
+        return jsonify({"error": str(e)})
+
+
+@app.route('/askChatGPT', methods=['POST'])
+def askChatGPT():
+    user_input = request.form['prompt']
+    language_input = request.form['option']
+    language_selector = ""
+    if (language_input == "eng_to_spa"):
+        language_selector = "English to Spanish"
+    elif (language_input == "spa_to_eng"):
+        language_selector = "Spanish to English"
+    
+    try:
+        # Use the OpenAI API to get a response from ChatGPT
+        completion = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You are a helpful assistant. Please translate the following text from "+language_selector+"."
+                },
+                {
+                    "role": "user",
+                    "content": user_input
+                }
+            ]
+        )
+
+        print(completion.choices[0].message)
+        result = completion.choices[0].message.content  # Correctly access content
+        return jsonify({"response": result})
+        # return completion.choices[0]
+    
+    except Exception as e:
+        return jsonify({"error": str(e)})
+
+
+@app.route('/askGoogleTranslate', methods=['POST'])
+def askGoogleTranslate():
+    user_input = request.form['text']
+    language_input = request.form['option']
+    text_to_translate = user_input
+
+    # return jsonify({"response": "hi"})
+    
+    if not text_to_translate:
+        return jsonify({"error": "This application returned an error", "details": "Text is required for translation"})
+    
+    source_language = ''
+    target_language = ''
+    if (language_input == "eng_to_spa"):
+        source_language = "en"
+        target_language = "es"
+    elif (language_input == "spa_to_eng"):
+        source_language = "es"
+        target_language = "en"
+
+    # Make the request to Google Translate API
+    try:
+        # Set up the URL for Google Translate API
+        url = f"https://translation.googleapis.com/language/translate/v2"
+
+        # Payload for the API request
+        params = {
+            'q': text_to_translate,
+            'target': target_language,
+            'source': source_language,
+            #'key': "invalid_key"
+            'key': GOOGLE_API_KEY
+        }
+
+        # Make the request to the Google Translate API
+        response = requests.get(url, params=params)
+
+        # Check if the response is successful
+        if response.status_code != 200:
+            print("Google Translate API has returned an error")
+            #return jsonify({"error": "Translation API request failed"})
+            return jsonify({"error": "The call to GoogleTranslate API returned an error", "details": str(response.json())})
+        
+
+        # Extract the translated text from the API response
+        print("translated text returned: "+ str(response.json()))
+        #translated_text = response.json().translations[0].translatedText
+        translated_text = response.json()['data']['translations'][0]['translatedText']
+        print("translated text parsed: "+ translated_text)
+
+        # Return the translated text
+        return jsonify({"translated_text": translated_text})
+
+    except Exception as e:
+        print(str(e))
+        return jsonify({"error": "This application returned an exception", "details": str(e)})
+
+
+### Individual ask functions ###
 
 @app.route('/ask', methods=['POST'])
 def ask():
@@ -40,9 +171,6 @@ def ask():
     except Exception as e:
         return jsonify({"error": str(e)})
     
-
-# Load your Google Cloud API key from environment variables or directly set it
-GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')  # Or hardcode your API key (not recommended)
 
 @app.route('/translate', methods=['POST'])
 def translate():

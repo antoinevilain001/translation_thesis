@@ -5,8 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChatGPT with Flask</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script> <!-- Link to your JavaScript file -->
 </head>
 <body>
+    <h1>Ask Both</h1>
+    
+    <form id="bothForm">
+        <label for="option1">
+            <input type="radio" id="option1" name="choice" value="eng_to_spa" required checked>
+            English to Spanish
+        </label><br>
+    
+        <label for="option2">
+            <input type="radio" id="option2" name="choice" value="spa_to_eng">
+            Spanish to English
+        </label><br>
+        <label for="prompt">Your question:</label><br>
+        <textarea id="prompt" name="prompt" rows="4" cols="50"></textarea><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <div id="GoogleTranslate_response"></div>
+    <div id="ChatGPT_response"></div>
+    <div id="Comparison"></div>
+
     <h1>Ask ChatGPT</h1>
     
     <form id="chatForm">
@@ -16,6 +38,7 @@
     </form>
     
     <div id="response"></div>
+
 
     <h1>Ask GoogleTranslate</h1>
     
@@ -27,59 +50,5 @@
 
     <div id="translation"></div>
 
-    <script>
-        $(document).ready(function() {
-            $('#chatForm').on('submit', function(event) {
-                event.preventDefault();
-
-                var user_input = $('#promptChatGPT').val();
-                $('#response').html("<p><b>Processing</b></p>");
-
-                $.ajax({
-                    url: '/ask',
-                    method: 'POST',
-                    data: { prompt: user_input },
-                    success: function(data) {
-                        if (data.response) {
-                            $('#response').html("<p><b>ChatGPT:</b> " + data.response + "</p>");
-                        } else if (data.error) {
-                            $('#response').html("<p><b>Error:</b> " + data.error + "</p>");
-                        } else {
-                            $('#response').html("<p><b>This application received an unexpected response</b> ");
-                        }
-                    }
-                });
-            });
-            $('#translateForm').on('submit', function(event) {
-                event.preventDefault();
-
-                var user_input = $('#promptGoogleTranslate').val();
-                $('#translation').html("<p><b>Processing</b></p>");
-                console.log("Posted to GoogleTranslate");
-
-                $.ajax({
-                    url: '/translate',
-                    method: 'POST',
-                    data: { text: user_input },
-                    success: function(data) {
-                        console.log("Ajax success");
-                        console.log(data);
-                        if (data.translated_text) {
-                            $('#translation').html("<p><b>GoogleTranslate:</b> " + data.translated_text + "</p>");
-                        } else if (data.error) {
-                            $('#translation').html("<p><b>Error:</b> " + data.error + "</p><p><b>Details:</b> " + data.details + "</p>");
-                        } else {
-                            $('#translation').html("<p><b>Error:</b>This application received an unexpected response from google translate");
-                        }
-                    },
-                    error: function(data) {
-                        console.log("Ajax error");
-                        console.log(data);
-                        $('#translation').html("<p><b>Error: </b>the GoogleTranslate call was unsuccessful</p>");
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
