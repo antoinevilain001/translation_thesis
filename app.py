@@ -2,8 +2,41 @@ from flask import Flask, render_template, request, jsonify
 from openai import OpenAI
 import os
 import requests
+from flask_sqlalchemy import SQLAlchemy
 
+# Initialize SQLAlchemy
+db = SQLAlchemy()
+
+# Create the Flask app
 app = Flask(__name__)
+
+# Configure the database
+app.secret_key = "hello"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mynewdatabase.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+# Initialize SQLAlchemy with the app
+db.init_app(app)
+
+class EngToSpa_translation(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    text = db.Column(db.String(500), nullable=False)
+    translation1_chatGPT = db.Column(db.String(500), nullable=False)
+    translation2_googleTranslate = db.Column(db.String(500), nullable=False)
+    preferred_translation = db.Column(db.Integer, nullable=True)
+
+    def __repr__(self):
+        return f'<Text {self.text}>'
+    
+class SpaToEng_translation(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    text = db.Column(db.String(500), nullable=False)
+    translation1_chatGPT = db.Column(db.String(500), nullable=False)
+    translation2_googleTranslate = db.Column(db.String(500), nullable=False)
+    preferred_translation = db.Column(db.Integer, nullable=True)
+
+    def __repr__(self):
+        return f'<Text {self.text}>'
 
 # Set your OpenAI API key
 client = OpenAI(
@@ -13,9 +46,31 @@ client = OpenAI(
 # Load your Google Cloud API key from environment variables or directly set it
 GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')  # Or hardcode your API key (not recommended)
 
+
 @app.route('/')
 def home():
     return render_template('index.html')
+
+
+# Define a route for creating new translations
+@app.route('/addToDB', methods=['POST'])
+def create_translation():
+
+    # Create a new EngToSpa_translation object
+    new_translation = EngToSpa_translation(
+        text="test",
+        translation1_chatGPT="test",
+        translation2_googleTranslate="test",
+        preferred_translation=2  # This is optional
+    )
+
+    try:
+        db.session.add(new_translation)  # Add to the session
+        db.session.commit()  # Commit the transaction
+        return jsonify({'message': 'Translation added successfully', 'id': new_translation.id}), 201
+    except Exception as e:
+        db.session.rollback()  # Rollback in case of error
+        return jsonify({'error': str(e)}), 500
 
 
 @app.route('/compareResponses', methods=['POST'])
@@ -43,7 +98,7 @@ def compareResponses():
                     "content": (
                         f"You are a helpful assistant. "
                         f"I am trying to decide between two {target_language_selector} translations "
-                        f"for the following {source_language_selector} phrase: {phrase_to_translate} \n"
+                        f"for the following {source_language_selector} phrase: {phrase_to_translate} "
                     )
                 },
                 {
