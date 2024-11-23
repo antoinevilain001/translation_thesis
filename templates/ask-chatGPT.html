@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block register_js %}
+    <script src="{{ url_for('static', filename='js/ask-chatGPT.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <h1>Welcome to FlaskApp</h1>
+    <p>This is the home page content. Use this template to display anything you like.</p>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container bg-black p-3 text-light">
+            <h1>Ask ChatGPT</h1>
+    
+            <form id="chatForm">
+                <label for="prompt">Your question:</label><br>
+                <textarea id="promptChatGPT" name="prompt" rows="4" cols="50"></textarea><br><br>
+                <button type="submit">Submit</button>
+            </form>
+            
+            <div id="response"></div>
+        </div>
+    </section>
+
+{% endblock %}

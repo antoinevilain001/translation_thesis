@@ -49,7 +49,15 @@ GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')  # Or hardcode your API key (not re
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('home.html')
+
+@app.route('/chatGPT')
+def template_chatGPT():
+    return render_template('ask-chatGPT.html')
+
+@app.route('/googleTranslate')
+def template_googleTranslate():
+    return render_template('ask-googleTranslate.html')
 
 
 # Define a route for creating new translations

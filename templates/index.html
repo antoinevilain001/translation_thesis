@@ -3,52 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlaskApp</title>
+    <title>{% block title %}FlaskApp{% endblock %}</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {% block register_js %}
     <script src="{{ url_for('static', filename='js/script.js') }}"></script> <!-- Link to your JavaScript file -->
+    {% endblock %}
+
+    <!-- Bootstrap CSS (CDN version) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> 
+    
+    <!-- Link to the custom styles.css file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Ask Both</h1>
-    
-    <form id="bothForm">
-        <label for="option1">
-            <input type="radio" id="option1" name="choice" value="eng_to_spa" required checked>
-            English to Spanish
-        </label><br>
-    
-        <label for="option2">
-            <input type="radio" id="option2" name="choice" value="spa_to_eng">
-            Spanish to English
-        </label><br>
-        <label for="prompt">Your question:</label><br>
-        <textarea id="prompt" name="prompt" rows="4" cols="50"></textarea><br><br>
-        <button type="submit">Submit</button>
-    </form>
-    
-    <div id="GoogleTranslate_response"></div>
-    <div id="ChatGPT_response"></div>
-    <div id="Comparison"></div>
+    <!-- Navbar (Bootstrap) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top text-light">
+        <a class="navbar-brand" href="#">My App</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/chatGPT">Ask ChatGPT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/googleTranslate">Ask Google Translate</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-    <h1>Ask ChatGPT</h1>
-    
-    <form id="chatForm">
-        <label for="prompt">Your question:</label><br>
-        <textarea id="promptChatGPT" name="prompt" rows="4" cols="50"></textarea><br><br>
-        <button type="submit">Submit</button>
-    </form>
-    
-    <div id="response"></div>
-
-
-    <h1>Ask GoogleTranslate</h1>
-    
-    <form id="translateForm">
-        <label for="prompt">Your question:</label><br>
-        <textarea id="promptGoogleTranslate" name="prompt" rows="4" cols="50"></textarea><br><br>
-        <button type="submit">Submit</button>
-    </form>
-
-    <div id="translation"></div>
+    <!-- Main Content -->
+    <main class="container-fluid bg-black p-5">
+        <div class = "container col-11 bg-dark p-5">
+            <div class = "container-fluid">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </main>
 
 </body>
 </html>

@@ -1,0 +1,24 @@
+/* Add some extra styling for smooth scrolling */
+html {
+    scroll-behavior: smooth;
+    background-color: #000000; /* Make it black if I scroll past the bottom */
+}
+
+/* style.css */
+body {
+    background-color: #3c3c3c; /* Sets the entire page's background to black */
+    color: white;           /* Ensures text is readable */
+}
+
+section {
+    background-color: rgb(30, 30, 30); /* Sets the entire page's background to black */
+}
+
+main {
+    background-color: black;
+    padding-top: 70px;
+}
+
+.navbar {
+    background-color: black;
+}

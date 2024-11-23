@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block register_js %}
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <h1>Welcome to FlaskApp</h1>
+    <p>This is the home page content. Use this template to display anything you like.</p>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container bg-black p-3 text-light">
+            <h1>Ask Both</h1>
+    
+            <form id="bothForm">
+                <label for="option1">
+                    <input type="radio" id="option1" name="choice" value="eng_to_spa" required checked>
+                    English to Spanish
+                </label><br>
+            
+                <label for="option2">
+                    <input type="radio" id="option2" name="choice" value="spa_to_eng">
+                    Spanish to English
+                </label><br>
+                <label for="prompt">Your question:</label><br>
+                <textarea id="prompt" name="prompt" rows="4" cols="50"></textarea><br><br>
+                <button type="submit">Submit</button>
+            </form>
+            
+            <div id="GoogleTranslate_response"></div>
+            <div id="ChatGPT_response"></div>
+            <div id="Comparison"></div>
+        </div>
+    </section>
+    
+{% endblock %}
