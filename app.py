@@ -83,6 +83,20 @@ def get_all_translations():
     # Return the response as JSON
     return jsonify(translations_list)
 
+@app.route('/deleteTranslation/<int:id>', methods=['DELETE'])
+def delete_translation(id):
+    # Query the translation by the given ID
+    translation_to_delete = translation.query.get(id)
+
+    if not translation_to_delete:
+        return jsonify({"error": "Translation not found"}), 404
+
+    # Delete the translation entry
+    db.session.delete(translation_to_delete)
+    db.session.commit()
+
+    return jsonify({"message": "Translation successfully deleted"}), 200
+
 # Define a route for creating new translations
 @app.route('/addToDB', methods=['POST'])
 def create_translation():

@@ -17,30 +17,36 @@
             <h1>Ask Both</h1>
     
             <form id="bothForm">
-                <label for="option1">
-                    <input type="radio" id="option1" name="choice" value="eng_to_spa" required checked>
-                    English to Spanish
-                </label><br>
+                <!-- Radio buttons for language choice -->
+                <div class="form-check mb-3">
+                    <input type="radio" class="form-check-input" id="option1" name="choice" value="eng_to_spa" required checked>
+                    <label class="form-check-label" for="option1">English to Spanish</label>
+                </div>
+                <div class="form-check mb-3">
+                    <input type="radio" class="form-check-input" id="option2" name="choice" value="spa_to_eng">
+                    <label class="form-check-label" for="option2">Spanish to English</label>
+                </div>
             
-                <label for="option2">
-                    <input type="radio" id="option2" name="choice" value="spa_to_eng">
-                    Spanish to English
-                </label><br>
-                <label for="prompt">Your question:</label><br>
-                <textarea id="prompt" name="prompt" rows="4" cols="50"></textarea><br><br>
+                <!-- Textarea for user input -->
+                <div class="mb-3">
+                    <label for="prompt" class="form-label">Your question:</label>
+                    <textarea id="prompt" name="prompt" class="form-control" rows="4" cols="50"></textarea>
+                </div>
+            
+                <!-- Submit Button -->
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             
             <p><b id="GoogleTranslate_header" class="d-none">GoogleTranslate: </b><span id="GoogleTranslate_response"></span></p>
-            <p><b id="ChatGPT_header"class="d-none">ChatGPT: </b><span id="ChatGPT_response"></span></p>
-            <p><b id="Comparison_header"class="d-none">Comparison: </b><span id="Comparison"></span></p>
+            <p><b id="ChatGPT_header" class="d-none">ChatGPT: </b><span id="ChatGPT_response"></span></p>
+            <p><b id="Comparison_header" class="d-none">Comparison: </b><span id="Comparison"></span></p>
 
             <!-- Buttons that should appear after the response -->
             <div id="responseButtons" class="d-none mt-3">
                 <p>Are any of the responses correct?</p>
                 <button class="btn btn-danger mx-2" data-action="0">Neither</button>
-                <button class="btn btn-info mx-2" data-action="1">Option 1 (ChatGPT)</button>
-                <button class="btn btn-primary mx-2" data-action="2">Option 2 (GoogleTranslate)</button>
+                <button class="btn btn-info mx-2" data-action="1">Option 1 (GoogleTranslate)</button>
+                <button class="btn btn-primary mx-2" data-action="2">Option 2 (ChatGPT)</button>
                 <button class="btn btn-success mx-2" data-action="3">Both</button>
             </div>
             <div id="submissionResponse"></div>
