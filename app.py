@@ -74,10 +74,8 @@ def template_get_translations():
 
 @app.route('/getTheTranslations', methods=['GET'])
 def get_all_translations():
-    the_direction = "SpaToEng"
-
     # Query the database to get entries that match the provided direction
-    translations = translation.query.filter_by(direction=the_direction).all()
+    translations = translation.query.order_by(translation.date_added.desc()).all()
 
     # Serialize the entries
     translations_list = [entry.serialize() for entry in translations]
@@ -88,21 +86,27 @@ def get_all_translations():
 # Define a route for creating new translations
 @app.route('/addToDB', methods=['POST'])
 def create_translation():
-    the_direction = "SpaToEng"
+    the_direction = request.form["language_sel"]
+    user_input = request.form["user_input"]
+    googleTranslate = request.form["googleTranslate"]
+    chatGPT = request.form["chatGPT"]
+    preferred_translation = request.form["preferred_translation"]
+
+    # Should probably insert some error handling
 
     # Create a new EngToSpa_translation object
     new_translation = translation(
-        text="test",
+        text=user_input,
         direction=the_direction,
-        translation1_chatGPT="test",
-        translation2_googleTranslate="test",
-        preferred_translation=2  # This is optional
+        translation1_chatGPT=chatGPT,
+        translation2_googleTranslate=googleTranslate,
+        preferred_translation=int(preferred_translation)  # This is optional
     )
 
     try:
         db.session.add(new_translation)  # Add to the session
         db.session.commit()  # Commit the transaction
-        return jsonify({'message': 'Translation added successfully', 'id': new_translation.id}), 201
+        return jsonify({'message': 'Translation added successfully', 'translation': new_translation.serialize()}), 201
     except Exception as e:
         db.session.rollback()  # Rollback in case of error
         return jsonify({'error': str(e)}), 500
@@ -146,7 +150,7 @@ def compareResponses():
             ]
         )
 
-        print(completion.choices[0].message)
+        # print(completion.choices[0].message)
         result = completion.choices[0].message.content  # Correctly access content
         return jsonify({"response": result})
         # return completion.choices[0]

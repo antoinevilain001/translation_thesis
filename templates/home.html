@@ -11,6 +11,7 @@
     <p>This is the home page content. Use this template to display anything you like.</p>
 
     <!-- Home Section -->
+
     <section id="home">
         <div class="container bg-black p-3 text-light">
             <h1>Ask Both</h1>
@@ -27,12 +28,23 @@
                 </label><br>
                 <label for="prompt">Your question:</label><br>
                 <textarea id="prompt" name="prompt" rows="4" cols="50"></textarea><br><br>
-                <button type="submit">Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             
-            <div id="GoogleTranslate_response"></div>
-            <div id="ChatGPT_response"></div>
-            <div id="Comparison"></div>
+            <p><b id="GoogleTranslate_header" class="d-none">GoogleTranslate: </b><span id="GoogleTranslate_response"></span></p>
+            <p><b id="ChatGPT_header"class="d-none">ChatGPT: </b><span id="ChatGPT_response"></span></p>
+            <p><b id="Comparison_header"class="d-none">Comparison: </b><span id="Comparison"></span></p>
+
+            <!-- Buttons that should appear after the response -->
+            <div id="responseButtons" class="d-none mt-3">
+                <p>Are any of the responses correct?</p>
+                <button class="btn btn-danger mx-2" data-action="0">Neither</button>
+                <button class="btn btn-info mx-2" data-action="1">Option 1 (ChatGPT)</button>
+                <button class="btn btn-primary mx-2" data-action="2">Option 2 (GoogleTranslate)</button>
+                <button class="btn btn-success mx-2" data-action="3">Both</button>
+            </div>
+            <div id="submissionResponse"></div>
+            <div id="creationResponse"></div>
         </div>
     </section>
     

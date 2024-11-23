@@ -23,6 +23,7 @@ $(document).ready(function() {
                                 <strong>Translation 1 (ChatGPT):</strong> ${translation.translation1_chatGPT}<br>
                                 <strong>Translation 2 (Google Translate):</strong> ${translation.translation2_googleTranslate}<br>
                                 <strong>Preferred Translation:</strong> ${translation.preferred_translation}<br>
+                                <strong>Preferred Translation:</strong> ${translation.date_added}<br>
                                 <hr>
                             </li>
                         `;
