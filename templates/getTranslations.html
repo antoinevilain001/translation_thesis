@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block register_js %}
+    <script src="{{ url_for('static', filename='js/getTranslations.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <h1>Welcome to FlaskApp</h1>
+    <p>This is the home page content. Use this template to display anything you like.</p>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container bg-black p-3 text-light">
+            <h1>Translations List</h1>
+    
+            <!-- Button to fetch translations -->
+            <button id="loadTranslations">Load Translations</button>
+
+            <!-- Container to display the translations -->
+            <div id="translations-container"></div>
+        </div>
+    </section>
+    
+{% endblock %}

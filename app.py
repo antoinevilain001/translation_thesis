@@ -3,6 +3,7 @@ from openai import OpenAI
 import os
 import requests
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.sql import func
 
 # Initialize SQLAlchemy
 db = SQLAlchemy()
@@ -12,31 +13,38 @@ app = Flask(__name__)
 
 # Configure the database
 app.secret_key = "hello"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mynewdatabase.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Initialize SQLAlchemy with the app
 db.init_app(app)
 
-class EngToSpa_translation(db.Model):
+class translation(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    direction = db.Column(db.String(10), nullable=False)
     text = db.Column(db.String(500), nullable=False)
     translation1_chatGPT = db.Column(db.String(500), nullable=False)
     translation2_googleTranslate = db.Column(db.String(500), nullable=False)
     preferred_translation = db.Column(db.Integer, nullable=True)
+    date_added = db.Column(db.DateTime, server_default=func.now(), nullable=False)
 
     def __repr__(self):
         return f'<Text {self.text}>'
     
-class SpaToEng_translation(db.Model):
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    text = db.Column(db.String(500), nullable=False)
-    translation1_chatGPT = db.Column(db.String(500), nullable=False)
-    translation2_googleTranslate = db.Column(db.String(500), nullable=False)
-    preferred_translation = db.Column(db.Integer, nullable=True)
-
-    def __repr__(self):
-        return f'<Text {self.text}>'
+    # Serialize method
+    def serialize(self):
+        return {
+            'id': self.id,
+            'direction': self.direction,
+            'text': self.text,
+            'translation1_chatGPT': self.translation1_chatGPT,
+            'translation2_googleTranslate': self.translation2_googleTranslate,
+            'preferred_translation': self.preferred_translation,
+            'date_added': self.date_added,
+        }
+    
+with app.app_context():
+    db.create_all()  # Creates the tables based on the models
 
 # Set your OpenAI API key
 client = OpenAI(
@@ -59,14 +67,33 @@ def template_chatGPT():
 def template_googleTranslate():
     return render_template('ask-googleTranslate.html')
 
+@app.route('/getTranslations')
+def template_get_translations():
+    return render_template('getTranslations.html')
+
+
+@app.route('/getTheTranslations', methods=['GET'])
+def get_all_translations():
+    the_direction = "SpaToEng"
+
+    # Query the database to get entries that match the provided direction
+    translations = translation.query.filter_by(direction=the_direction).all()
+
+    # Serialize the entries
+    translations_list = [entry.serialize() for entry in translations]
+
+    # Return the response as JSON
+    return jsonify(translations_list)
 
 # Define a route for creating new translations
 @app.route('/addToDB', methods=['POST'])
 def create_translation():
+    the_direction = "SpaToEng"
 
     # Create a new EngToSpa_translation object
-    new_translation = EngToSpa_translation(
+    new_translation = translation(
         text="test",
+        direction=the_direction,
         translation1_chatGPT="test",
         translation2_googleTranslate="test",
         preferred_translation=2  # This is optional
