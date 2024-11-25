@@ -12,21 +12,24 @@ $(document).ready(function() {
                 // Check if there is any data in the response
                 //console.log(response)
                 if (response.length > 0) {
-                    let htmlContent = '<ul>'; // Start an unordered list
+                    let htmlContent = '<div class="row col-12 p-3">'; // Make the container
                     // Loop through each translation in the response
                     response.forEach(function(translation) {
                         // Add each translation to the list
+                        console.log(translation);
                         htmlContent += `
-                            <div class="row col-12" id="row-${translation.id}">
-                                <li class="col-10">
+                            <div class="row col-12 p-3" id="row-${translation.id}">
+                                <div class="col-10">
                                     <strong>ID:</strong> ${translation.id}<br>
                                     <strong>Date added:</strong> ${translation.date_added}<br>
                                     <strong>Direction:</strong> ${translation.direction}<br>
                                     <strong>Text:</strong> ${translation.text}<br>
-                                    <strong>Translation 1 (ChatGPT):</strong> ${translation.translation1_chatGPT}<br>
-                                    <strong>Translation 2 (Google Translate):</strong> ${translation.translation2_googleTranslate}<br>
+                                    <strong class="${translation.preferred_translation === 1 || translation.preferred_translation === 3? 'text-success' : 'text-danger'}">
+                                        Translation 1 (Google Translate):</strong> ${translation.translation1_googleTranslate}<br>
+                                    <strong class="${translation.preferred_translation === 2 || translation.preferred_translation === 3? 'text-success' : 'text-danger'}">
+                                        Translation 2 (ChatGPT):</strong> ${translation.translation2_chatGPT}<br>
                                     <strong>Preferred Translation:</strong> ${translation.preferred_translation}<br>
-                                </li>
+                                </div>
                                 <div class="col-2">
                                     <button class="btn"><i class="bi bi-trash fs-2 delete-button" data-id="${translation.id}"></i></button>
                                     <button class="btn btn-primary confirm-delete d-none" data-id="${translation.id}">Confirm Delete?</button>
@@ -35,7 +38,7 @@ $(document).ready(function() {
                             <hr>
                         `;
                     });
-                    htmlContent += '</ul>'; // Close the list
+                    htmlContent += '</div>'; // Close the list
                     $('#translations-container').html(htmlContent); // Insert the list into the container
                 } else {
                     $('#translations-container').html('<p>No translations available.</p>');

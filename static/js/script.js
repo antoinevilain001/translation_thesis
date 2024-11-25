@@ -2,6 +2,11 @@ $(document).ready(function() {
     $('#bothForm').on('submit', function(event) { // the ChatGPT handling function
         event.preventDefault();
 
+        // blank out inputs from previous question
+        $('#submissionResponse').html("");
+        $('#responseButtons').addClass('d-none'); // hide the buttons
+
+        // get inputs and start processing
         var user_input = $('#prompt').val();
         var language_sel = $('input[name="choice"]:checked').val(); 
         $('#ChatGPT_header').removeClass('d-none');

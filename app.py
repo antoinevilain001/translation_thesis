@@ -23,8 +23,8 @@ class translation(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     direction = db.Column(db.String(10), nullable=False)
     text = db.Column(db.String(500), nullable=False)
-    translation1_chatGPT = db.Column(db.String(500), nullable=False)
-    translation2_googleTranslate = db.Column(db.String(500), nullable=False)
+    translation1_googleTranslate = db.Column(db.String(500), nullable=False)
+    translation2_chatGPT = db.Column(db.String(500), nullable=False)
     preferred_translation = db.Column(db.Integer, nullable=True)
     date_added = db.Column(db.DateTime, server_default=func.now(), nullable=False)
 
@@ -37,8 +37,8 @@ class translation(db.Model):
             'id': self.id,
             'direction': self.direction,
             'text': self.text,
-            'translation1_chatGPT': self.translation1_chatGPT,
-            'translation2_googleTranslate': self.translation2_googleTranslate,
+            'translation1_googleTranslate': self.translation1_googleTranslate,
+            'translation2_chatGPT': self.translation2_chatGPT,
             'preferred_translation': self.preferred_translation,
             'date_added': self.date_added,
         }
@@ -112,8 +112,8 @@ def create_translation():
     new_translation = translation(
         text=user_input,
         direction=the_direction,
-        translation1_chatGPT=chatGPT,
-        translation2_googleTranslate=googleTranslate,
+        translation1_googleTranslate=googleTranslate,
+        translation2_chatGPT=chatGPT,
         preferred_translation=int(preferred_translation)  # This is optional
     )
 
