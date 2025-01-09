@@ -46,7 +46,38 @@ $(document).ready(function() {
                 $('#translations-container').html(htmlContent); // Insert the list into the container
                 $('#statistics-container').html(`
                     <div class="row col-12 p-3">
-                        Total: ${total}, Neither: ${counts[0]}, GoogleTranslate: ${counts[1]}, ChatGPT: ${counts[2]}, Both: ${counts[3]}
+                        <div class = "col-8"></div>
+                        <div class = "col-4">
+                            <table class="table table-dark">
+                                <tbody>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td>${total}</td>
+                                        <td>${(total / total * 100).toFixed(2)}%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Neither</td>
+                                        <td>${counts[0]}</td>
+                                        <td>${(counts[0] / total * 100).toFixed(2)}%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GoogleTranslate</td>
+                                        <td>${counts[1]}</td>
+                                        <td>${(counts[1] / total * 100).toFixed(2)}%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ChatGPT</td>
+                                        <td>${counts[2]}</td>
+                                        <td>${(counts[2] / total * 100).toFixed(2)}%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Both</td>
+                                        <td>${counts[3]}</td>
+                                        <td>${(counts[3] / total * 100).toFixed(2)}%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     <hr>
                 `);
