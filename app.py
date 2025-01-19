@@ -1,9 +1,10 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_file
 from openai import OpenAI
 import os
 import requests
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
+import csv # for database export
 
 # Initialize SQLAlchemy
 db = SQLAlchemy()
@@ -66,6 +67,29 @@ def template_chatGPT():
 @app.route('/googleTranslate')
 def template_googleTranslate():
     return render_template('ask-googleTranslate.html')
+
+
+@app.route('/export_translations')
+def export_csv():
+    table_name = "translation"
+    output_csv_path = os.path.join('instance', f'{table_name}.csv')
+
+    # Ensure the output directory exists
+    os.makedirs(os.path.dirname(output_csv_path), exist_ok=True)
+
+    # Use the model class directly
+    rows = translation.query.all()  # Query all rows from the translation table
+    columns = [column.name for column in translation.__table__.columns]  # Get column names
+
+    # Write to CSV
+    with open(output_csv_path, mode='w', newline='', encoding='utf-8-sig') as csv_file:
+        writer = csv.writer(csv_file)
+        writer.writerow(columns)
+        writer.writerows([tuple(getattr(row, col) for col in columns) for row in rows])
+
+    # Return the CSV as a downloadable file
+    return send_file(output_csv_path, as_attachment=True)
+
 
 @app.route('/getTranslations')
 def template_get_translations():
