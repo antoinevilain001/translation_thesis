@@ -190,7 +190,7 @@ def askChatGPT():
             messages=[
                 {
                     "role": "system",
-                    "content": "You are a helpful assistant. Please translate the following text from "+language_selector+"."
+                    "content": "You are a helpful assistant. Please translate the following text from "+language_selector+". Include the translation and nothing else."
                 },
                 {
                     "role": "user",
