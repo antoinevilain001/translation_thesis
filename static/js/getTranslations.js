@@ -122,4 +122,8 @@ $(document).ready(function() {
             }
         });
     });
+    document.getElementById("downloadBtn").addEventListener("click", function() {
+        // Send a request to the download endpoint
+        window.location.href = "/export_translations";
+    });
 });
