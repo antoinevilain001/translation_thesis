@@ -14,6 +14,7 @@ obtained from https://www.kaggle.com/datasets/lonnieqin/englishspanish-translati
 
 ### COMET evaluator
 https://github.com/Unbabel/COMET
+- Unbabel/XCOMET-XL supposedly has better error analysis than Unbabel/wmt20-comet-qe-da
 
 ### Useful Git Commands
 - git add -A . 
