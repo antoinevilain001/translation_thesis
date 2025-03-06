@@ -15,8 +15,6 @@
 16,eng_to_spa,It’s raining cats and dogs,Lueve a cántaros,Está lloviendo a cántaros.,2,2025-01-02 16:03:46
 17,eng_to_spa,let's play,Vamos a jugar,Vamos a jugar.,3,2025-01-02 23:01:02
 18,eng_to_spa,let it snow,Deja que nieve,que nieve,3,2025-01-02 23:01:33
-19,spa_to_eng,suavemente,gently,"The translation of ""suavemente"" from Spanish to English is ""gently"" or ""softly.""",3,2025-01-03 20:32:30
-20,spa_to_eng,despacito,slowly,"""Despacito"" translates to ""slowly"" in English. It is also the title of a popular song by Luis Fonsi featuring Daddy Yankee. If you need a translation of the lyrics or more information about the song, feel free to ask!",3,2025-01-03 20:32:49
 21,eng_to_spa,my name is joseph,Mi nombre es joseph,Me llamo Joseph.,3,2025-01-03 20:33:16
 22,eng_to_spa,She gave up.,Ella se rindió.,Ella se rindió.,3,2025-01-06 20:25:45
 23,eng_to_spa,I can't stand her.,No la soporto.,No la soporto.,3,2025-01-06 20:26:04
@@ -90,3 +88,16 @@
 95,spa_to_eng,El profesor te dijo que miraras dónde te sientas.,The teacher told you to watch where you sit.,The teacher told you to watch where you sit.,3,2025-01-19 15:54:29
 96,eng_to_spa,The teacher told you to watch where you sit,El profesor te dijo que miraras dónde te sientas.,El maestro te dijo que tengas cuidado donde te sientas.,3,2025-01-19 15:55:28
 97,eng_to_spa,The teacher told you to watch where you sit,El profesor te dijo que miraras dónde te sientas.,El profesor te dijo que mires dónde te sientas.,3,2025-01-19 15:55:56
+98,eng_to_spa,There's no time like the present.,No hay mejor momento que el presente.,No hay tiempo como el presente.,3,2025-01-20 00:01:59
+99,spa_to_eng,las heridas,the wounds,the wounds,3,2025-01-23 20:39:41
+100,spa_to_eng,No tiene sentido quedarse en el pasado sufriendo.,There is no point in staying in the past and suffering.,It makes no sense to stay in the past suffering.,3,2025-01-23 20:41:38
+101,spa_to_eng,"Siento mucha nostalgia y a veces rencor, especialmente hacia todas las personas que me hirieron en la vida. Las cosas malas no se olvidan así de fácil.","I feel a lot of nostalgia and sometimes resentment, especially towards all the people who hurt me in life. Bad things are not forgotten that easily.","I feel a lot of nostalgia and sometimes resentment, especially towards all the people who hurt me in life. Bad things are not easy to forget.",3,2025-01-23 20:42:19
+102,spa_to_eng,Ángela cree que la gente no quiere volver al propio país después de mucho tiempo.,Angela believes that people do not want to return to their own country after a long time.,Ángela believes that people do not want to return to their own country after a long time.,3,2025-01-23 20:47:22
+103,spa_to_eng,"La mayoría hace su vida en otro país, y después se queda.","Most of them make their life in another country, and then stay.","Most people live their lives in another country, and then they stay.",3,2025-01-23 20:48:04
+104,spa_to_eng,La casa de Dostoievski toma el nombre de un edificio en ruinas de Santiago de Chile donde vivía un grupo de poetas y pintores a mediados del siglo XX,Dostoevsky's house takes its name from a ruined building in Santiago de Chile where a group of poets and painters lived in the mid-20th century.,"Dostoevsky's house takes its name from a ruined building in Santiago, Chile, where a group of poets and painters lived in the mid-20th century.",2,2025-01-28 19:18:26
+105,spa_to_eng,Jorge Edwards es uno de los principales representantes de la narrativa chilena,Jorge Edwards is one of the main representatives of Chilean narrative,Jorge Edwards is one of the main representatives of Chilean literature.,2,2025-01-28 19:19:29
+106,spa_to_eng,"Después del golpe de estado de Augusto Pinochet, abandonó su vida diplomática y se exilió en Barcelona, donde empezó su labor editorial","After Augusto Pinochet's coup, he abandoned his diplomatic life and went into exile in Barcelona, where he began his editorial work.","After the coup d'état by Augusto Pinochet, he abandoned his diplomatic life and went into exile in Barcelona, where he began his editorial work.",3,2025-01-28 19:20:51
+107,spa_to_eng,¿Te acuerdas de la película?,Do you remember the movie?,Do you remember the movie?,3,2025-01-28 19:44:52
+108,spa_to_eng,Ya era un buen año aún antes de conocer a Enrique.,It was already a good year even before I met Enrique.,It was already a good year even before meeting Enrique.,2,2025-01-28 23:38:12
+109,spa_to_eng,Los sábados y los domingos ella juega al fútbol con su prima Carolina y juntas ven todos los partidos de fútbol en la televisión.,On Saturdays and Sundays she plays soccer with her cousin Carolina and together they watch all the soccer games on television.,"On Saturdays and Sundays, she plays soccer with her cousin Carolina, and together they watch all the soccer games on television.",3,2025-03-06 16:46:43
+110,spa_to_eng,¿Cómo se siente ella respecto de sus hijos?,How does she feel about her children?,How does she feel about her children?,3,2025-03-06 16:50:06

@@ -16,7 +16,7 @@ obtained from https://www.kaggle.com/datasets/lonnieqin/englishspanish-translati
 https://github.com/Unbabel/COMET
 - Unbabel/XCOMET-XL supposedly has better error analysis than Unbabel/wmt20-comet-qe-da
     - better as defined by being able to export a list of the errors found
-- also some ways to analyze directly from the command line
+- also some ways to analyze directly from the command line (does still appear to take a few minutes to run)
     - comet-score -s src.txt -t hyp1.txt -r ref.txt
     - comet-score -s src.txt -t hyp1.txt -r ref.txt --model Unbabel/XCOMET-XL --to_json output.json
     - comet-score -s src.txt -t hyp1.txt --model Unbabel/wmt22-cometkiwi-da
