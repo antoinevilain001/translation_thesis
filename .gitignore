@@ -1,6 +1,1 @@
-venv
-*.env
-test*
-__pycache__
-*.db
-/instance
+venv/
