@@ -22,6 +22,7 @@ https://github.com/Unbabel/COMET
     - comet-score -s src.txt -t hyp1.txt -r ref.txt --model Unbabel/XCOMET-XL --to_json output.json
     - comet-score -s src.txt -t hyp1.txt --model Unbabel/wmt22-cometkiwi-da
         - this last one promises a reference-free evaluation, will need to explore further to see if this works
+        - this is openly accessible but seems to require a sign-up with huggingface to accept the terms and conditions
     - comet-compare -s src.de -t hyp1.en hyp2.en hyp3.en -r ref.en
         - used to get statistical significance between two machine learning systems
         - this is the recommended method instead of computing the scores separately

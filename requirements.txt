@@ -3,3 +3,5 @@ openai
 requests
 flask-sqlalchemy
 unbabel-comet
+ipykernel
+matplotlib
