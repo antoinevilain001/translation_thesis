@@ -1,7 +1,6 @@
-venv*
+venv
 *.env
 test*
 __pycache__
 *.db
 /instance
-*backup

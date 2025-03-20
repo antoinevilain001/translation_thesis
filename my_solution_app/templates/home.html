@@ -1,0 +1,65 @@
+{% extends "index.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block register_js %}
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <h1>Welcome to My Translation App</h1>
+    <p>Use this app to ask both GoogleTranslate and ChatGPT to perform the same translation and observe the results.</p>
+
+    <!-- Home Section -->
+
+    <section id="home">
+        <div class="container bg-black p-3 text-light">
+            <h1>Ask Both</h1>
+    
+            <form id="bothForm">
+                <!-- Radio buttons for language choice -->
+                <div class="form-check mb-3">
+                    <input type="radio" class="form-check-input" id="option1" name="choice" value="eng_to_spa" required checked>
+                    <label class="form-check-label" for="option1">English to Spanish</label>
+                </div>
+                <div class="form-check mb-3">
+                    <input type="radio" class="form-check-input" id="option2" name="choice" value="spa_to_eng">
+                    <label class="form-check-label" for="option2">Spanish to English</label>
+                </div>
+                <div class="form-check mb-3">
+                    <input type="radio" class="form-check-input" id="option3" name="choice" value="eng_to_fre">
+                    <label class="form-check-label" for="option3">English to French</label>
+                </div>
+                <div class="form-check mb-3">
+                    <input type="radio" class="form-check-input" id="option4" name="choice" value="fre_to_eng">
+                    <label class="form-check-label" for="option4">French to English</label>
+                </div>
+            
+                <!-- Textarea for user input -->
+                <div class="mb-3">
+                    <label for="prompt" class="form-label">Your question:</label>
+                    <textarea id="prompt" name="prompt" class="form-control" rows="4" cols="50"></textarea>
+                </div>
+            
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            
+            <p><b id="GoogleTranslate_header" class="d-none">GoogleTranslate: </b><span id="GoogleTranslate_response"></span></p>
+            <p><b id="ChatGPT_header" class="d-none">ChatGPT: </b><span id="ChatGPT_response"></span></p>
+            <p><b id="Comparison_header" class="d-none">Comparison: </b><span id="Comparison"></span></p>
+
+            <!-- Buttons that should appear after the response -->
+            <div id="responseButtons" class="d-none mt-3">
+                <p>Are any of the responses correct?</p>
+                <button class="btn btn-danger mx-2" data-action="0">Neither</button>
+                <button class="btn btn-info mx-2" data-action="1">Option 1 (GoogleTranslate)</button>
+                <button class="btn btn-primary mx-2" data-action="2">Option 2 (ChatGPT)</button>
+                <button class="btn btn-success mx-2" data-action="3">Both</button>
+            </div>
+            <div id="submissionResponse"></div>
+            <div id="creationResponse"></div>
+        </div>
+    </section>
+    
+{% endblock %}
