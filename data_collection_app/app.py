@@ -164,6 +164,12 @@ def compareResponses():
     elif (language_input == "spa_to_eng"):
         source_language_selector = "Spanish"
         target_language_selector = "English"
+    elif (language_input == "fre_to_eng"):
+        source_language_selector = "French"
+        target_language_selector = "English"
+    elif (language_input == "eng_to_fre"):
+        source_language_selector = "English"
+        target_language_selector = "French"
     
     try:
         # Use the OpenAI API to get a response from ChatGPT
@@ -206,6 +212,10 @@ def askChatGPT():
         language_selector = "English to Spanish"
     elif (language_input == "spa_to_eng"):
         language_selector = "Spanish to English"
+    elif (language_input == "fre_to_eng"):
+        language_selector = "French to English"
+    elif (language_input == "eng_to_fre"):
+        language_selector = "English to French"
     
     try:
         # Use the OpenAI API to get a response from ChatGPT
@@ -251,6 +261,12 @@ def askGoogleTranslate():
     elif (language_input == "spa_to_eng"):
         source_language = "es"
         target_language = "en"
+    elif (language_input == "fre_to_eng"):
+        source_language = "fr"
+        target_language = "en"
+    elif (language_input == "eng_to_fre"):
+        source_language = "en"
+        target_language = "fr"
 
     # Make the request to Google Translate API
     try:
