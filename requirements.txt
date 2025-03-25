@@ -6,3 +6,4 @@ unbabel-comet
 ipykernel
 matplotlib
 python-dotenv
+deepl

@@ -5,6 +5,7 @@ import requests
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
 import csv # for database export
+from dotenv import load_dotenv
 
 # Initialize SQLAlchemy
 db = SQLAlchemy()
@@ -25,8 +26,11 @@ class translation(db.Model):
     direction = db.Column(db.String(10), nullable=False)
     text = db.Column(db.String(500), nullable=False)
     translation1_googleTranslate = db.Column(db.String(500), nullable=False)
+    translation1_review = db.Column(db.Integer, nullable=True)
+    translation1_score = db.Column(db.Float, nullable=True)
     translation2_chatGPT = db.Column(db.String(500), nullable=False)
-    preferred_translation = db.Column(db.Integer, nullable=True)
+    translation2_review = db.Column(db.Integer, nullable=True)
+    translation2_score = db.Column(db.Float, nullable=True)
     date_added = db.Column(db.DateTime, server_default=func.now(), nullable=False)
 
     def __repr__(self):
@@ -40,20 +44,23 @@ class translation(db.Model):
             'text': self.text,
             'translation1_googleTranslate': self.translation1_googleTranslate,
             'translation2_chatGPT': self.translation2_chatGPT,
-            'preferred_translation': self.preferred_translation,
             'date_added': self.date_added,
         }
     
 with app.app_context():
     db.create_all()  # Creates the tables based on the models
 
+# Load environment variables from .env file
+load_dotenv()
+
 # Set your OpenAI API key
 client = OpenAI(
-    # This is the default and can be omitted
-    api_key=os.environ.get("OPENAI_API_KEY"),
+    api_key=os.getenv("OPENAI_API_KEY"),  # Now loaded from .env
 )
-# Load your Google Cloud API key from environment variables or directly set it
-GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')  # Or hardcode your API key (not recommended)
+
+# Load your Google Cloud API key
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+DEEPL_API_KEY = os.getenv("DEEPL_API_KEY")
 
 
 @app.route('/')
@@ -67,6 +74,10 @@ def template_chatGPT():
 @app.route('/googleTranslate')
 def template_googleTranslate():
     return render_template('ask-googleTranslate.html')
+
+@app.route('/deepL')
+def template_deepL():
+    return render_template('ask-deepL.html')
 
 
 @app.route('/export_translations')
@@ -241,6 +252,9 @@ def askChatGPT():
     except Exception as e:
         return jsonify({"error": str(e)})
 
+@app.route('/askDeepL', methods=['POST'])
+def askDeepL():
+    return jsonify({"hey": "testing"})
 
 @app.route('/askGoogleTranslate', methods=['POST'])
 def askGoogleTranslate():
