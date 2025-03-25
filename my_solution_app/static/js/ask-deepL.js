@@ -8,9 +8,12 @@ $(document).ready(function() {
         $.ajax({
             url: '/askDeepL',
             method: 'POST',
-            data: { prompt: user_input },
+            data: { prompt: user_input, option: "eng_to_spa" },
             success: function(data) {
-                $('#translation').html("<p>"+data.hey+"</p>");
+                $('#translation').html("<p>"+JSON.stringify(data)+"</p>");
+            },
+            error: function(data) {
+                $('#translation').html("<p>Error: "+JSON.stringify(data)+"</p>");
             }
         });
     });

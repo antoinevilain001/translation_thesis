@@ -6,6 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
 import csv # for database export
 from dotenv import load_dotenv
+import deepl
 
 # Initialize SQLAlchemy
 db = SQLAlchemy()
@@ -61,6 +62,9 @@ client = OpenAI(
 # Load your Google Cloud API key
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 DEEPL_API_KEY = os.getenv("DEEPL_API_KEY")
+print(GOOGLE_API_KEY)
+print(DEEPL_API_KEY)
+translator = deepl.Translator(DEEPL_API_KEY)
 
 
 @app.route('/')
@@ -254,7 +258,31 @@ def askChatGPT():
 
 @app.route('/askDeepL', methods=['POST'])
 def askDeepL():
-    return jsonify({"hey": "testing"})
+    text = request.form['prompt']
+    language_input = request.form['option']
+    source_language = ''
+    target_language = ''
+    if (language_input == "eng_to_spa"):
+        source_language = "EN"
+        target_language = "ES"
+    elif (language_input == "spa_to_eng"):
+        source_language = "ES"
+        target_language = "EN"
+    elif (language_input == "fre_to_eng"):
+        source_language = "FR"
+        target_language = "EN"
+    elif (language_input == "eng_to_fre"):
+        source_language = "EN"
+        target_language = "FR"
+
+    if not text:
+        return jsonify({"error": "No text provided"}), 400
+
+    try:
+        translated_text = translator.translate_text(text, source_lang=source_language, target_lang=target_language)
+        return jsonify({"translated_text": translated_text.text})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/askGoogleTranslate', methods=['POST'])
 def askGoogleTranslate():
