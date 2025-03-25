@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#bothForm').on('submit', function(event) { // the ChatGPT handling function
+    $('#bothForm').on('submit', function(event) { // the handling function
         event.preventDefault();
 
         // blank out inputs from previous question
@@ -13,7 +13,8 @@ $(document).ready(function() {
         $('#ChatGPT_response').html("ChatGPT Processing");
         $('#GoogleTranslate_header').removeClass('d-none');
         $('#GoogleTranslate_response').html("GoogleTranslate Processing");
-        $('#Comparison').html("Comparison waiting"); // won't do anything since it's still hidden
+        $('#DeepL_header').removeClass('d-none');
+        $('#DeepL_response').html("DeepL Processing");
 
         var phrase_to_translate = user_input;
         var googleTranslate_translation;
@@ -56,30 +57,19 @@ $(document).ready(function() {
                 $('#GoogleTranslate_response').html("<b>Error: </b>the GoogleTranslate call was unsuccessful.");
             }
         });
+        let ajax3 = $.ajax({
+            url: '/askDeepL',
+            method: 'POST',
+            data: { prompt: user_input, option: "eng_to_spa" },
+            success: function(data) {
+                $('#DeepL_response').html(data.translated_text);
+            },
+            error: function(data) {
+                $('#DeepL_response').html("<p>Error: "+JSON.stringify(data)+"</p>");
+            }
+        });
         // Execute the third AJAX request only after the first two complete
-        Promise.all([ajax1, ajax2]).then(function(responses) {
-            // Both ajax1 and ajax2 have completed, now execute the third AJAX request
-            $('#Comparison_header').removeClass('d-none');
-            $('#Comparison').html("processing");
-            $.ajax({ // call compare
-                url: '/compareResponses',
-                method: 'POST',
-                data: {
-                    phrase_to_translate: phrase_to_translate,
-                    googleTranslate_translation: googleTranslate_translation,
-                    chatGPT_translation: chatGPT_translation,
-                    option: language_sel
-                },
-                success: function(data) {
-                    if (data.response) {
-                        $('#Comparison').html(data.response);
-                    } else if (data.error) {
-                        $('#Comparison').html("<b>Error:</b> " + data.error);
-                    } else {
-                        $('#Comparison').html("<b>Error:</b> This application received an unexpected response.");
-                    }
-                }
-            });
+        Promise.all([ajax1, ajax2, ajax3]).then(function(responses) {
             // Show the hidden buttons
             $('#responseButtons').removeClass('d-none');
         }).catch(function(error) {
