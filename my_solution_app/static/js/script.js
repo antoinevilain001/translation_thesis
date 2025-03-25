@@ -4,6 +4,9 @@ $(document).ready(function() {
 
         // blank out inputs from previous question
         $('#submissionResponse').html("");
+        $('#rate_GoogleTranslate').addClass('d-none');
+        $('#rate_ChatGPT').addClass('d-none');
+        $('#rate_DeepL').addClass('d-none');
         $('#responseButtons').addClass('d-none'); // hide the buttons
 
         // get inputs and start processing
@@ -72,6 +75,8 @@ $(document).ready(function() {
         Promise.all([ajax1, ajax2, ajax3]).then(function(responses) {
             // Show the hidden buttons
             $('#responseButtons').removeClass('d-none');
+            $('#rate_GoogleTranslate').removeClass('d-none');
+            $('#rate_ChatGPT').removeClass('d-none');
             $('#rate_DeepL').removeClass('d-none');
 
         }).catch(function(error) {
