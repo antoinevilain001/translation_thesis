@@ -72,6 +72,8 @@ $(document).ready(function() {
         Promise.all([ajax1, ajax2, ajax3]).then(function(responses) {
             // Show the hidden buttons
             $('#responseButtons').removeClass('d-none');
+            $('#rate_DeepL').removeClass('d-none');
+
         }).catch(function(error) {
             console.log("An error occurred:", error);
         });
