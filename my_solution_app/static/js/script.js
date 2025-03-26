@@ -149,9 +149,25 @@ $(document).ready(function() {
             deepL_rating: deepL_rating.rating
         }
 
-        console.log(data);
+        $.ajax({ // call Google Translate
+            url: '/addToDB',
+            method: 'POST',
+            data: data,
+            success: function(response) {
+                console.log("Ajax success");
+                console.log(response);
+                $('#submissionResponse').html('<b>Submitted!</b>');
+            },
+            error: function(xhr, status, error) {
+                // Handle errors here
+                console.error('Error fetching translations:', error);
+                $('#creationResponse').html('<p>Error loading translations.</p>');
+            }
+        });
+
+        //console.log(data);
 
         // Optionally, display the ratings on the page (for testing)
-        alert('Ratings: ' + JSON.stringify(data));
+        //alert('Ratings: ' + JSON.stringify(data));
     });
 });

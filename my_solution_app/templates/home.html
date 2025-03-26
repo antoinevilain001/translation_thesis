@@ -64,7 +64,7 @@
                         <input type="radio" class="btn-check" id="rating4-set1" autocomplete="off" name="rating-1" value="4">
                         <label class="btn btn-outline-primary" for="rating4-set1">4</label>
                 
-                        <input type="radio" class="btn-check" id="rating5-set1" autocomplete="off" name="rating-1" value="5">
+                        <input type="radio" class="btn-check" id="rating5-set1" autocomplete="off" name="rating-1" value="5" checked>
                         <label class="btn btn-outline-primary" for="rating5-set1">5</label>
                     </div>
                 </form>
@@ -87,7 +87,7 @@
                         <input type="radio" class="btn-check" id="rating4-set2" autocomplete="off" name="rating-2" value="4">
                         <label class="btn btn-outline-primary" for="rating4-set2">4</label>
                 
-                        <input type="radio" class="btn-check" id="rating5-set2" autocomplete="off" name="rating-2" value="5">
+                        <input type="radio" class="btn-check" id="rating5-set2" autocomplete="off" name="rating-2" value="5" checked>
                         <label class="btn btn-outline-primary" for="rating5-set2">5</label>
                     </div>
                 </form>
@@ -110,7 +110,7 @@
                         <input type="radio" class="btn-check" id="rating4-set0" autocomplete="off" name="rating-0" value="4">
                         <label class="btn btn-outline-primary" for="rating4-set0">4</label>
                 
-                        <input type="radio" class="btn-check" id="rating5-set0" autocomplete="off" name="rating-0" value="5">
+                        <input type="radio" class="btn-check" id="rating5-set0" autocomplete="off" name="rating-0" value="5" checked>
                         <label class="btn btn-outline-primary" for="rating5-set0">5</label>
                     </div>
                 </form>
@@ -133,7 +133,7 @@
                         <input type="radio" class="btn-check" id="rating4-set3" autocomplete="off" name="rating-3" value="4">
                         <label class="btn btn-outline-primary" for="rating4-set3">4</label>
                 
-                        <input type="radio" class="btn-check" id="rating5-set3" autocomplete="off" name="rating-3" value="5">
+                        <input type="radio" class="btn-check" id="rating5-set3" autocomplete="off" name="rating-3" value="5" checked>
                         <label class="btn btn-outline-primary" for="rating5-set3">5</label>
                     </div>
                 </form>
@@ -146,7 +146,17 @@
             </div>
             <div id="submissionResponse"></div>
             <div id="creationResponse"></div>
+
+            <br>
+            <br>
+            <h4>Ratings for reference: </h4>
+            <span>5 - Meaning is essentially equal and the sentence is natural.</span><br>
+            <span>4 - Meaning is essentially equal but some expressions are unnatural.</span><br>
+            <span>3 - The key information in the sentence is the same but the details differ.</span><br>
+            <span>2 - Some content is similar but the most important information in the sentence is different.</span><br>
+            <span>1 - There is no overlap in the meaning of the source sentence whatsoever.</span>
         </div>
+
     </section>
     
 {% endblock %}

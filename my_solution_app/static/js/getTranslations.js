@@ -99,27 +99,22 @@ $(document).ready(function() {
                                 <tbody>
                                     <tr>
                                         <td>Total</td>
-                                        <td>${total}</td>
                                         <td>${(total / total * 100).toFixed(2)}%</td>
                                     </tr>
                                     <tr>
                                         <td>Google Translate</td>
-                                        <td>${counts[0]}</td>
                                         <td>${(counts[0] / total * 100).toFixed(2)}%</td>
                                     </tr>
                                     <tr>
                                         <td>ChatGPT</td>
-                                        <td>${counts[1]}</td>
                                         <td>${(counts[1] / total * 100).toFixed(2)}%</td>
                                     </tr>
                                     <tr>
                                         <td>ChatGPTmini</td>
-                                        <td>${counts[2]}</td>
                                         <td>${(counts[2] / total * 100).toFixed(2)}%</td>
                                     </tr>
                                     <tr>
                                         <td>DeepL</td>
-                                        <td>${counts[3]}</td>
                                         <td>${(counts[3] / total * 100).toFixed(2)}%</td>
                                     </tr>
                                 </tbody>
