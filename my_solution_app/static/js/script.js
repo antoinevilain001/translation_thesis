@@ -84,40 +84,30 @@ $(document).ready(function() {
         });
     });
     // Targeting buttons inside #responseButtons1 container
-    $('#responseButtons button').click(function() {
-        // You can access the specific button that was clicked using `this`
-        var buttonText = $(this).text(); // Get the text of the clicked button
-        var action = $(this).data('action');
-        $('#submissionResponse').html("<p><b>Submitted " + buttonText + "!</b></p>");
+   // Add event listener to the submit button
+    document.getElementById('submit-rating').addEventListener('click', function(event) {
+        event.preventDefault();  // Prevent the form from submitting (page refresh)
 
-        // Perform logic based on which button was clicked
-        console.log(action);
-        var user_input = $('#prompt').val();
-        var language_sel = $('input[name="choice"]:checked').val();
-        var googleTranslate = $('#GoogleTranslate_response').text();
-        var chatGPT = $('#ChatGPT_response').text();
-        let data = {
-            user_input: user_input,
-            language_sel: language_sel,
-            googleTranslate: googleTranslate,
-            chatGPT: chatGPT,
-            preferred_translation: action
-        };
-        console.log(data);
-        $.ajax({ // call Google Translate
-            url: '/addToDB',
-            method: 'POST',
-            data: data,
-            success: function(response) {
-                console.log("Ajax success");
-                console.log(response);
-            },
-            error: function(xhr, status, error) {
-                // Handle errors here
-                console.error('Error fetching translations:', error);
-                $('#creationResponse').html('<p>Error loading translations.</p>');
+        // Initialize an array to store the ratings
+        const ratings = [];
+
+        // Loop through each set of radio buttons
+        for (let i = 1; i <= 3; i++) {
+            const selectedRating = document.querySelector(`input[name="rating-${i}"]:checked`);
+            
+            if (selectedRating) {
+                // If a rating is selected, store it in the ratings array
+                ratings.push({ set: i, rating: selectedRating.value });
+            } else {
+                // If no rating is selected, store null or a default value
+                ratings.push({ set: i, rating: null });
             }
-        });
+        }
 
+        // Print the ratings to the console (you can modify this part to send to a server or further processing)
+        console.log('Ratings:', ratings);
+
+        // Optionally, display the ratings on the page (for testing)
+        alert('Ratings: ' + JSON.stringify(ratings));
     });
 });
