@@ -1,4 +1,10 @@
 $(document).ready(function() {
+    var user_input;
+    var language_sel;
+    var googleTranslate_translation;
+    var chatGPT_translation;
+    var chatGPTmini_translation;
+    var deepL_translation;
     $('#bothForm').on('submit', function(event) { // the handling function
         event.preventDefault();
 
@@ -10,8 +16,8 @@ $(document).ready(function() {
         $('#responseButtons').addClass('d-none'); // hide the buttons
 
         // get inputs and start processing
-        var user_input = $('#prompt').val();
-        var language_sel = $('input[name="choice"]:checked').val(); 
+        user_input = $('#prompt').val();
+        language_sel = $('input[name="choice"]:checked').val(); 
         $('#ChatGPT_header').removeClass('d-none');
         $('#ChatGPT_response').html("ChatGPT Processing");
         $('#ChatGPTmini_header').removeClass('d-none');
@@ -27,9 +33,6 @@ $(document).ready(function() {
         $('#rate_DeepL').removeClass('d-none');
 
         var phrase_to_translate = user_input;
-        var googleTranslate_translation;
-        var chatGPT_translation;
-        var chatGPTmini_translation;
 
         let ajax0 = $.ajax({ // call ChatGPT
             url: '/askChatGPT',
@@ -89,6 +92,7 @@ $(document).ready(function() {
             data: { prompt: user_input, option: language_sel },
             success: function(data) {
                 $('#DeepL_response').html(data.translated_text);
+                deepL_translation = data.translated_text;
             },
             error: function(data) {
                 $('#DeepL_response').html("<p>Error: "+JSON.stringify(data)+"</p>");
@@ -125,9 +129,29 @@ $(document).ready(function() {
         }
 
         // Print the ratings to the console (you can modify this part to send to a server or further processing)
-        console.log('Ratings:', ratings);
+        //console.log('Ratings:', ratings);
+
+        var chatGPT_rating = ratings[2];
+        var chatGPTmini_rating = ratings[0];
+        var googleTranslate_rating = ratings[1];
+        var deepL_rating = ratings[3];
+
+        data = {
+            prompt: user_input,
+            option: language_sel,
+            googleTranslate_translation: googleTranslate_translation,
+            googleTranslate_rating: googleTranslate_rating.rating,
+            chatGPT_translation: chatGPT_translation,
+            chatGPT_rating: chatGPT_rating.rating,
+            chatGPTmini_translation: chatGPTmini_translation,
+            chatGPTmini_rating: chatGPTmini_rating.rating,
+            deepL_translation: deepL_translation,
+            deepL_rating: deepL_rating.rating
+        }
+
+        console.log(data);
 
         // Optionally, display the ratings on the page (for testing)
-        alert('Ratings: ' + JSON.stringify(ratings));
+        alert('Ratings: ' + JSON.stringify(data));
     });
 });
