@@ -48,6 +48,7 @@
             <br>
 
             <!-- Responses -->
+            <b id="GoogleTranslate_header" class="d-none">GoogleTranslate: </b>
             <div id="rate_GoogleTranslate" class="option d-none">
                 <form class="rating-form form-group" data-option-id="1">
                     <div class="btn-group" role="group" aria-label="Rating Set 1">
@@ -68,8 +69,9 @@
                     </div>
                 </form>
             </div>
-            <p><b id="GoogleTranslate_header" class="d-none">GoogleTranslate: </b><span id="GoogleTranslate_response"></span></p>
+            <p><span id="GoogleTranslate_response"></span></p>
 
+            <b id="ChatGPT_header" class="d-none">ChatGPT: </b>
             <div id="rate_ChatGPT" class="option d-none">
                 <form class="rating-form form-group" data-option-id="2">
                     <div class="btn-group" role="group" aria-label="Rating Set 2">
@@ -90,8 +92,32 @@
                     </div>
                 </form>
             </div>
-            <p><b id="ChatGPT_header" class="d-none">ChatGPT: </b><span id="ChatGPT_response"></span></p>
+            <p><span id="ChatGPT_response"></span></p>
 
+            <b id="ChatGPTmini_header" class="d-none">ChatGPTmini: </b>
+            <div id="rate_ChatGPTmini" class="option d-none">
+                <form class="rating-form form-group" data-option-id="2">
+                    <div class="btn-group" role="group" aria-label="Rating Set 0">
+                        <input type="radio" class="btn-check" id="rating1-set0" autocomplete="off" name="rating-0" value="1">
+                        <label class="btn btn-outline-primary" for="rating1-set0">1</label>
+                
+                        <input type="radio" class="btn-check" id="rating2-set0" autocomplete="off" name="rating-0" value="2">
+                        <label class="btn btn-outline-primary" for="rating2-set0">2</label>
+                
+                        <input type="radio" class="btn-check" id="rating3-set0" autocomplete="off" name="rating-0" value="3">
+                        <label class="btn btn-outline-primary" for="rating3-set0">3</label>
+                
+                        <input type="radio" class="btn-check" id="rating4-set0" autocomplete="off" name="rating-0" value="4">
+                        <label class="btn btn-outline-primary" for="rating4-set0">4</label>
+                
+                        <input type="radio" class="btn-check" id="rating5-set0" autocomplete="off" name="rating-0" value="5">
+                        <label class="btn btn-outline-primary" for="rating5-set0">5</label>
+                    </div>
+                </form>
+            </div>
+            <p><span id="ChatGPTmini_response"></span></p>
+
+            <b id="DeepL_header" class="d-none">DeepL: </b>
             <div id="rate_DeepL" class="option d-none">
                 <form class="rating-form form-group" data-option-id="3">
                     <div class="btn-group" role="group" aria-label="Rating Set 3">
@@ -112,7 +138,7 @@
                     </div>
                 </form>
             </div>
-            <p><b id="DeepL_header" class="d-none">DeepL: </b><span id="DeepL_response"></span></p>
+            <p><span id="DeepL_response"></span></p>
 
             <!-- Buttons that should appear after the response -->
             <div id="responseButtons" class="d-none mt-3">

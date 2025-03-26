@@ -14,23 +14,46 @@ $(document).ready(function() {
         var language_sel = $('input[name="choice"]:checked').val(); 
         $('#ChatGPT_header').removeClass('d-none');
         $('#ChatGPT_response').html("ChatGPT Processing");
+        $('#ChatGPTmini_header').removeClass('d-none');
+        $('#ChatGPTmini_response').html("ChatGPTmini Processing");
         $('#GoogleTranslate_header').removeClass('d-none');
         $('#GoogleTranslate_response').html("GoogleTranslate Processing");
         $('#DeepL_header').removeClass('d-none');
         $('#DeepL_response').html("DeepL Processing");
+        // Show the hidden buttons
+        $('#rate_GoogleTranslate').removeClass('d-none');
+        $('#rate_ChatGPT').removeClass('d-none');
+        $('#rate_ChatGPTmini').removeClass('d-none');
+        $('#rate_DeepL').removeClass('d-none');
 
         var phrase_to_translate = user_input;
         var googleTranslate_translation;
         var chatGPT_translation;
+        var chatGPTmini_translation;
 
-        let ajax1 = $.ajax({ // call ChatGPT
+        let ajax0 = $.ajax({ // call ChatGPT
             url: '/askChatGPT',
             method: 'POST',
             data: { prompt: user_input, option: language_sel, model: "gpt-4o-mini" },
             success: function(data) {
                 if (data.response) {
-                    $('#ChatGPT_response').html(data.response);
+                    $('#ChatGPTmini_response').html(data.response);
                     chatGPT_translation = data.response;
+                } else if (data.error) {
+                    $('#ChatGPTmini_response').html("<b>Error:</b> " + data.error);
+                } else {
+                    $('#ChatGPTmini_response').html("<b>Error:</b> This application received an unexpected response.");
+                }
+            }
+        });
+        let ajax1 = $.ajax({ // call ChatGPT advanced model
+            url: '/askChatGPT',
+            method: 'POST',
+            data: { prompt: user_input, option: language_sel, model: "gpt-4o" },
+            success: function(data) {
+                if (data.response) {
+                    $('#ChatGPT_response').html(data.response);
+                    chatGPTmini_translation = data.response;
                 } else if (data.error) {
                     $('#ChatGPT_response').html("<b>Error:</b> " + data.error);
                 } else {
@@ -63,7 +86,7 @@ $(document).ready(function() {
         let ajax3 = $.ajax({
             url: '/askDeepL',
             method: 'POST',
-            data: { prompt: user_input, option: "eng_to_spa" },
+            data: { prompt: user_input, option: language_sel },
             success: function(data) {
                 $('#DeepL_response').html(data.translated_text);
             },
@@ -73,12 +96,9 @@ $(document).ready(function() {
         });
         // Execute the third AJAX request only after the first two complete
         Promise.all([ajax1, ajax2, ajax3]).then(function(responses) {
-            // Show the hidden buttons
+            console.log("Success.");
+            // Show hidden button
             $('#responseButtons').removeClass('d-none');
-            $('#rate_GoogleTranslate').removeClass('d-none');
-            $('#rate_ChatGPT').removeClass('d-none');
-            $('#rate_DeepL').removeClass('d-none');
-
         }).catch(function(error) {
             console.log("An error occurred:", error);
         });
@@ -92,7 +112,7 @@ $(document).ready(function() {
         const ratings = [];
 
         // Loop through each set of radio buttons
-        for (let i = 1; i <= 3; i++) {
+        for (let i = 0; i <= 3; i++) {
             const selectedRating = document.querySelector(`input[name="rating-${i}"]:checked`);
             
             if (selectedRating) {
