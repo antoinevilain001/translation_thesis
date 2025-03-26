@@ -22,20 +22,31 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Initialize SQLAlchemy with the app
 db.init_app(app)
 
+from sqlalchemy.sql import func
+
 class translation(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     direction = db.Column(db.String(10), nullable=False)
     text = db.Column(db.String(500), nullable=False)
+
+    # Translation fields
     translation1_googleTranslate = db.Column(db.String(500), nullable=False)
-    translation1_review = db.Column(db.Integer, nullable=True)
-    translation1_score = db.Column(db.Float, nullable=True)
+    rating1_googleTranslate = db.Column(db.Integer, nullable=True)
+    
     translation2_chatGPT = db.Column(db.String(500), nullable=False)
-    translation2_review = db.Column(db.Integer, nullable=True)
-    translation2_score = db.Column(db.Float, nullable=True)
+    rating2_chatGPT = db.Column(db.Integer, nullable=True)
+    
+    translation3_chatGPTmini = db.Column(db.String(500), nullable=False)
+    rating3_chatGPTmini = db.Column(db.Integer, nullable=True)
+    
+    translation4_deepL = db.Column(db.String(500), nullable=False)
+    rating4_deepL = db.Column(db.Integer, nullable=True)
+
+    # Timestamp
     date_added = db.Column(db.DateTime, server_default=func.now(), nullable=False)
 
     def __repr__(self):
-        return f'<Text {self.text}>'
+        return f'<Translation {self.text}>'
     
     # Serialize method
     def serialize(self):
@@ -44,7 +55,13 @@ class translation(db.Model):
             'direction': self.direction,
             'text': self.text,
             'translation1_googleTranslate': self.translation1_googleTranslate,
+            'rating1_googleTranslate': self.rating1_googleTranslate,
             'translation2_chatGPT': self.translation2_chatGPT,
+            'rating2_chatGPT': self.rating2_chatGPT,
+            'translation3_chatGPTmini': self.translation3_chatGPTmini,
+            'rating3_chatGPTmini': self.rating3_chatGPTmini,
+            'translation4_deepL': self.translation4_deepL,
+            'rating4_deepL': self.rating4_deepL,
             'date_added': self.date_added,
         }
     
@@ -139,29 +156,41 @@ def delete_translation(id):
 # Define a route for creating new translations
 @app.route('/addToDB', methods=['POST'])
 def create_translation():
-    the_direction = request.form["language_sel"]
-    user_input = request.form["user_input"]
-    googleTranslate = request.form["googleTranslate"]
-    chatGPT = request.form["chatGPT"]
-    preferred_translation = request.form["preferred_translation"]
-
-    # Should probably insert some error handling
-
-    # Create a new EngToSpa_translation object
-    new_translation = translation(
-        text=user_input,
-        direction=the_direction,
-        translation1_googleTranslate=googleTranslate,
-        translation2_chatGPT=chatGPT,
-        preferred_translation=int(preferred_translation)  # This is optional
-    )
-
     try:
-        db.session.add(new_translation)  # Add to the session
-        db.session.commit()  # Commit the transaction
+        # Extract data from request form
+        user_input = request.form["prompt"]
+        the_direction = request.form["option"]
+        googleTranslate_translation = request.form["googleTranslate_translation"]
+        googleTranslate_rating = int(request.form["googleTranslate_rating"])
+        chatGPT_translation = request.form["chatGPT_translation"]
+        chatGPT_rating = int(request.form["chatGPT_rating"])
+        chatGPTmini_translation = request.form["chatGPTmini_translation"]
+        chatGPTmini_rating = int(request.form["chatGPTmini_rating"])
+        deepL_translation = request.form["deepL_translation"]
+        deepL_rating = int(request.form["deepL_rating"])
+
+        # Create a new translation object
+        new_translation = translation(
+            text=user_input,
+            direction=the_direction,
+            translation1_googleTranslate=googleTranslate_translation,
+            rating1_googleTranslate=googleTranslate_rating,
+            translation2_chatGPT=chatGPT_translation,
+            rating2_chatGPT=chatGPT_rating,
+            translation3_chatGPTmini=chatGPTmini_translation,
+            rating3_chatGPTmini=chatGPTmini_rating,
+            translation4_deepL=deepL_translation,
+            rating4_deepL=deepL_rating
+        )
+
+        # Add to database and commit
+        db.session.add(new_translation)
+        db.session.commit()
+
         return jsonify({'message': 'Translation added successfully', 'translation': new_translation.serialize()}), 201
+
     except Exception as e:
-        db.session.rollback()  # Rollback in case of error
+        db.session.rollback()
         return jsonify({'error': str(e)}), 500
 
 

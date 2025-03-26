@@ -25,14 +25,33 @@ $(document).ready(function() {
                                 <strong>Date added:</strong> ${translation.date_added}<br>
                                 <strong>Direction:</strong> ${translation.direction}<br>
                                 <strong>Text:</strong> ${translation.text}<br>
-                                <strong class="${translation.preferred_translation === 1 || translation.preferred_translation === 3? 'text-success' : 'text-danger'}">
-                                    Translation 1 (Google Translate):</strong> ${translation.translation1_googleTranslate}<br>
-                                <strong class="${translation.preferred_translation === 2 || translation.preferred_translation === 3? 'text-success' : 'text-danger'}">
-                                    Translation 2 (ChatGPT):</strong> ${translation.translation2_chatGPT}<br>
-                                <strong>Preferred Translation:</strong> ${translation.preferred_translation}<br>
+
+                                <strong class="${translation.rating1_googleTranslate > 4 ? 'text-success' : translation.rating1_googleTranslate > 3 ? 'text-info' : translation.rating1_googleTranslate > 2 ? 'text-warning' : ''}">
+                                    Translation 1 (Google Translate):</strong> 
+                                ${translation.translation1_googleTranslate} 
+                                <span class="badge bg-secondary">Rating: ${translation.rating1_googleTranslate || 'N/A'}</span><br>
+
+                                <strong class="${translation.rating2_chatGPT > 4 ? 'text-success' : translation.rating2_chatGPT > 3 ? 'text-info' : translation.rating2_chatGPT > 2 ? 'text-warning' : ''}">
+                                    Translation 2 (ChatGPT):</strong> 
+                                ${translation.translation2_chatGPT} 
+                                <span class="badge bg-secondary">Rating: ${translation.rating2_chatGPT || 'N/A'}</span><br>
+
+                                <strong class="${translation.rating3_chatGPTmini > 4 ? 'text-success' : translation.rating3_chatGPTmini > 3 ? 'text-info' : translation.rating3_chatGPTmini > 2 ? 'text-warning' : ''}">
+                                    Translation 3 (ChatGPT Mini):</strong> 
+                                ${translation.translation3_chatGPTmini} 
+                                <span class="badge bg-secondary">Rating: ${translation.rating3_chatGPTmini || 'N/A'}</span><br>
+
+                                <strong class="${translation.rating4_deepL > 4 ? 'text-success' : translation.rating4_deepL > 3 ? 'text-info' : translation.rating4_deepL > 2 ? 'text-warning' : ''}">
+                                    Translation 4 (DeepL):</strong> 
+                                ${translation.translation4_deepL} 
+                                <span class="badge bg-secondary">Rating: ${translation.rating4_deepL || 'N/A'}</span><br>
+
                             </div>
+                            
                             <div class="col-2">
-                                <button class="btn"><i class="bi bi-trash fs-2 delete-button" data-id="${translation.id}"></i></button>
+                                <button class="btn">
+                                    <i class="bi bi-trash fs-2 delete-button" data-id="${translation.id}"></i>
+                                </button>
                                 <button class="btn btn-primary confirm-delete d-none" data-id="${translation.id}">Confirm Delete?</button>
                             </div>
                         </div>
@@ -40,7 +59,10 @@ $(document).ready(function() {
                     `;
                     // Increment statistics
                     total++;
-                    counts[translation.preferred_translation]++;
+                    counts[0] += translation.rating1_googleTranslate / 5;
+                    counts[1] += translation.rating2_chatGPT / 5;
+                    counts[2] += translation.rating3_chatGPTmini / 5;
+                    counts[3] += translation.rating4_deepL / 5;
                 });
                 htmlContent += '</div>'; // Close the list
                 $('#translations-container').html(htmlContent); // Insert the list into the container
@@ -56,22 +78,22 @@ $(document).ready(function() {
                                         <td>${(total / total * 100).toFixed(2)}%</td>
                                     </tr>
                                     <tr>
-                                        <td>Neither</td>
+                                        <td>Google Translate</td>
                                         <td>${counts[0]}</td>
                                         <td>${(counts[0] / total * 100).toFixed(2)}%</td>
                                     </tr>
                                     <tr>
-                                        <td>GoogleTranslate</td>
+                                        <td>ChatGPT</td>
                                         <td>${counts[1]}</td>
                                         <td>${(counts[1] / total * 100).toFixed(2)}%</td>
                                     </tr>
                                     <tr>
-                                        <td>ChatGPT</td>
+                                        <td>ChatGPTmini</td>
                                         <td>${counts[2]}</td>
                                         <td>${(counts[2] / total * 100).toFixed(2)}%</td>
                                     </tr>
                                     <tr>
-                                        <td>Both</td>
+                                        <td>DeepL</td>
                                         <td>${counts[3]}</td>
                                         <td>${(counts[3] / total * 100).toFixed(2)}%</td>
                                     </tr>
