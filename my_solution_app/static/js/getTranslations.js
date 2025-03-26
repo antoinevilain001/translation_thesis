@@ -1,3 +1,28 @@
+function getRatingClass(rating) {
+    if (rating > 4) {
+        return 'text-success';
+    } else if (rating > 3) {
+        return 'text-info';
+    } else if (rating > 2) {
+        return 'text-warning';
+    } else {
+        return 'text-danger';
+    }
+}
+
+function getBadgeClass(rating) {
+    if (rating > 4) {
+        return 'bg-success';
+    } else if (rating > 3) {
+        return 'bg-info';
+    } else if (rating > 2) {
+        return 'bg-warning';
+    } else {
+        return 'bg-warning';
+    }
+}
+
+
 $(document).ready(function() {
     // Make AJAX GET request to fetch translations
     $.ajax({
@@ -26,25 +51,25 @@ $(document).ready(function() {
                                 <strong>Direction:</strong> ${translation.direction}<br>
                                 <strong>Text:</strong> ${translation.text}<br>
 
-                                <strong class="${translation.rating1_googleTranslate > 4 ? 'text-success' : translation.rating1_googleTranslate > 3 ? 'text-info' : translation.rating1_googleTranslate > 2 ? 'text-warning' : ''}">
+                                <strong class="${getRatingClass(translation.rating1_googleTranslate)}">
                                     Translation 1 (Google Translate):</strong> 
                                 ${translation.translation1_googleTranslate} 
-                                <span class="badge bg-secondary">Rating: ${translation.rating1_googleTranslate || 'N/A'}</span><br>
+                                <span class="badge ${getRatingClass(translation.rating1_googleTranslate)}">Rating: ${translation.rating1_googleTranslate || 'N/A'}</span><br>
 
-                                <strong class="${translation.rating2_chatGPT > 4 ? 'text-success' : translation.rating2_chatGPT > 3 ? 'text-info' : translation.rating2_chatGPT > 2 ? 'text-warning' : ''}">
+                                <strong class="${getRatingClass(translation.rating2_chatGPT)}">
                                     Translation 2 (ChatGPT):</strong> 
                                 ${translation.translation2_chatGPT} 
-                                <span class="badge bg-secondary">Rating: ${translation.rating2_chatGPT || 'N/A'}</span><br>
+                                <span class="badge ${getRatingClass(translation.rating2_chatGPT)}">Rating: ${translation.rating2_chatGPT || 'N/A'}</span><br>
 
-                                <strong class="${translation.rating3_chatGPTmini > 4 ? 'text-success' : translation.rating3_chatGPTmini > 3 ? 'text-info' : translation.rating3_chatGPTmini > 2 ? 'text-warning' : ''}">
+                                <strong class="${getRatingClass(translation.rating3_chatGPTmini)}">
                                     Translation 3 (ChatGPT Mini):</strong> 
                                 ${translation.translation3_chatGPTmini} 
-                                <span class="badge bg-secondary">Rating: ${translation.rating3_chatGPTmini || 'N/A'}</span><br>
+                                <span class="badge ${getRatingClass(translation.rating3_chatGPTmini)}">Rating: ${translation.rating3_chatGPTmini || 'N/A'}</span><br>
 
-                                <strong class="${translation.rating4_deepL > 4 ? 'text-success' : translation.rating4_deepL > 3 ? 'text-info' : translation.rating4_deepL > 2 ? 'text-warning' : ''}">
+                                <strong class="${getRatingClass(translation.rating4_deepL)}">
                                     Translation 4 (DeepL):</strong> 
                                 ${translation.translation4_deepL} 
-                                <span class="badge bg-secondary">Rating: ${translation.rating4_deepL || 'N/A'}</span><br>
+                                <span class="badge ${getRatingClass(translation.rating4_deepL)}">Rating: ${translation.rating4_deepL || 'N/A'}</span><br>
 
                             </div>
                             
