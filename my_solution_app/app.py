@@ -232,10 +232,12 @@ def askChatGPT():
     elif (language_input == "eng_to_fre"):
         language_selector = "English to French"
     
+    my_model = request.form['model']
+
     try:
         # Use the OpenAI API to get a response from ChatGPT
         completion = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model=my_model,
             messages=[
                 {
                     "role": "system",

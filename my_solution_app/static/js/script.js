@@ -26,7 +26,7 @@ $(document).ready(function() {
         let ajax1 = $.ajax({ // call ChatGPT
             url: '/askChatGPT',
             method: 'POST',
-            data: { prompt: user_input, option: language_sel },
+            data: { prompt: user_input, option: language_sel, model: "gpt-4o-mini" },
             success: function(data) {
                 if (data.response) {
                     $('#ChatGPT_response').html(data.response);
