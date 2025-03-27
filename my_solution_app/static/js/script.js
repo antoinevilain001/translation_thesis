@@ -1,3 +1,8 @@
+function decodeHTMLEntities(text) {
+    let textarea = document.createElement("textarea");
+    textarea.innerHTML = text;
+    return textarea.value;
+}
 function filterText(text) {
     text = decodeHTMLEntities(text);
     text = text.replace(/["“”]/g, '');
@@ -25,7 +30,7 @@ $(document).ready(function() {
 
         // get inputs and start processing
         user_input = $('#prompt').val().replace(/["“”]/g, '');
-
+        user_input = filterText(user_input);
         category = $('#category').val();
         language_sel = $('input[name="choice"]:checked').val(); 
         $('#ChatGPT_header').removeClass('d-none');
@@ -147,19 +152,39 @@ $(document).ready(function() {
         var googleTranslate_rating = ratings[1];
         var deepL_rating = ratings[3];
 
+        // Logging the original values before filtering
+        console.log("Original Google Translate Translation:", googleTranslate_translation);
+        console.log("Original ChatGPT Translation:", chatGPT_translation);
+        console.log("Original ChatGPT Mini Translation:", chatGPTmini_translation);
+        console.log("Original DeepL Translation:", deepL_translation);
+
+        // Call filterText and log the filtered results
+        let filtered_googleTranslate = filterText(googleTranslate_translation);
+        console.log("Filtered Google Translate Translation:", filtered_googleTranslate);
+
+        let filtered_chatGPT = filterText(chatGPT_translation);
+        console.log("Filtered ChatGPT Translation:", filtered_chatGPT);
+
+        let filtered_chatGPTmini = filterText(chatGPTmini_translation);
+        console.log("Filtered ChatGPT Mini Translation:", filtered_chatGPTmini);
+
+        let filtered_deepL = filterText(deepL_translation);
+        console.log("Filtered DeepL Translation:", filtered_deepL);
+
+        // Construct the data object with filtered values
         data = {
-            prompt: user_input.replace(/["“”]/g, ''),
+            prompt: user_input,
             option: language_sel,
             category: category,
-            googleTranslate_translation: googleTranslate_translation.replace(/["“”]/g, ''),
+            googleTranslate_translation: filtered_googleTranslate,
             googleTranslate_rating: googleTranslate_rating.rating,
-            chatGPT_translation: chatGPT_translation.replace(/["“”]/g, ''),
+            chatGPT_translation: filtered_chatGPT,
             chatGPT_rating: chatGPT_rating.rating,
-            chatGPTmini_translation: chatGPTmini_translation.replace(/["“”]/g, ''),
+            chatGPTmini_translation: filtered_chatGPTmini,
             chatGPTmini_rating: chatGPTmini_rating.rating,
-            deepL_translation: deepL_translation.replace(/["“”]/g, ''),
+            deepL_translation: filtered_deepL,
             deepL_rating: deepL_rating.rating
-        }
+        };
 
         $.ajax({ // call Google Translate
             url: '/addToDB',

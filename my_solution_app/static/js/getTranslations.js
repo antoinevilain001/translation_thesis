@@ -42,7 +42,7 @@ $(document).ready(function() {
                 // Loop through each translation in the response
                 response.forEach(function(translation) {
                     // Add each translation to the list
-                    console.log(translation);
+                    //console.log(translation);
                     htmlContent += `
                         <div class="row col-12 p-3" id="row-${translation.id}">
                             <div class="col-10">
