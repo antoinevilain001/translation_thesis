@@ -81,8 +81,6 @@ client = OpenAI(
 # Load your Google Cloud API key
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 DEEPL_API_KEY = os.getenv("DEEPL_API_KEY")
-print(GOOGLE_API_KEY)
-print(DEEPL_API_KEY)
 translator = deepl.Translator(DEEPL_API_KEY)
 
 

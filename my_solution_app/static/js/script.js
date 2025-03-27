@@ -23,6 +23,7 @@ $(document).ready(function() {
 
         // blank out inputs from previous question
         $('#submissionResponse').html("");
+        $('#creationResponse').html("");
         $('#rate_GoogleTranslate').addClass('d-none');
         $('#rate_ChatGPT').addClass('d-none');
         $('#rate_DeepL').addClass('d-none');
@@ -152,22 +153,19 @@ $(document).ready(function() {
         var googleTranslate_rating = ratings[1];
         var deepL_rating = ratings[3];
 
-        // Logging the original values before filtering
         console.log("Original Google Translate Translation:", googleTranslate_translation);
-        console.log("Original ChatGPT Translation:", chatGPT_translation);
-        console.log("Original ChatGPT Mini Translation:", chatGPTmini_translation);
-        console.log("Original DeepL Translation:", deepL_translation);
-
-        // Call filterText and log the filtered results
         let filtered_googleTranslate = filterText(googleTranslate_translation);
         console.log("Filtered Google Translate Translation:", filtered_googleTranslate);
 
+        console.log("Original ChatGPT Translation:", chatGPT_translation);
         let filtered_chatGPT = filterText(chatGPT_translation);
         console.log("Filtered ChatGPT Translation:", filtered_chatGPT);
 
+        console.log("Original ChatGPT Mini Translation:", chatGPTmini_translation);
         let filtered_chatGPTmini = filterText(chatGPTmini_translation);
         console.log("Filtered ChatGPT Mini Translation:", filtered_chatGPTmini);
 
+        console.log("Original DeepL Translation:", deepL_translation);
         let filtered_deepL = filterText(deepL_translation);
         console.log("Filtered DeepL Translation:", filtered_deepL);
 
