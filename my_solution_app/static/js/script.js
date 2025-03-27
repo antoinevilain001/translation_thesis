@@ -17,7 +17,7 @@ $(document).ready(function() {
         $('#responseButtons').addClass('d-none'); // hide the buttons
 
         // get inputs and start processing
-        user_input = $('#prompt').val();
+        user_input = $('#prompt').val().replace(/["“”]/g, '');
         category = $('#category').val();
         language_sel = $('input[name="choice"]:checked').val(); 
         $('#ChatGPT_header').removeClass('d-none');
@@ -140,16 +140,16 @@ $(document).ready(function() {
         var deepL_rating = ratings[3];
 
         data = {
-            prompt: user_input,
+            prompt: user_input.replace(/["“”]/g, ''),
             option: language_sel,
             category: category,
-            googleTranslate_translation: googleTranslate_translation,
+            googleTranslate_translation: googleTranslate_translation.replace(/["“”]/g, ''),
             googleTranslate_rating: googleTranslate_rating.rating,
-            chatGPT_translation: chatGPT_translation,
+            chatGPT_translation: chatGPT_translation.replace(/["“”]/g, ''),
             chatGPT_rating: chatGPT_rating.rating,
-            chatGPTmini_translation: chatGPTmini_translation,
+            chatGPTmini_translation: chatGPTmini_translation.replace(/["“”]/g, ''),
             chatGPTmini_rating: chatGPTmini_rating.rating,
-            deepL_translation: deepL_translation,
+            deepL_translation: deepL_translation.replace(/["“”]/g, ''),
             deepL_rating: deepL_rating.rating
         }
 
