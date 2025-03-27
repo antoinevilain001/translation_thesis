@@ -28,6 +28,7 @@ class translation(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     direction = db.Column(db.String(10), nullable=False)
     text = db.Column(db.String(500), nullable=False)
+    category = db.Column(db.String(500), nullable=False)
 
     # Translation fields
     translation1_googleTranslate = db.Column(db.String(500), nullable=False)
@@ -53,6 +54,7 @@ class translation(db.Model):
         return {
             'id': self.id,
             'direction': self.direction,
+            'category': self.category,
             'text': self.text,
             'translation1_googleTranslate': self.translation1_googleTranslate,
             'rating1_googleTranslate': self.rating1_googleTranslate,
@@ -160,6 +162,7 @@ def create_translation():
         # Extract data from request form
         user_input = request.form["prompt"]
         the_direction = request.form["option"]
+        category = request.form["category"]
         googleTranslate_translation = request.form["googleTranslate_translation"]
         googleTranslate_rating = int(request.form["googleTranslate_rating"])
         chatGPT_translation = request.form["chatGPT_translation"]
@@ -173,6 +176,7 @@ def create_translation():
         new_translation = translation(
             text=user_input,
             direction=the_direction,
+            category=category,
             translation1_googleTranslate=googleTranslate_translation,
             rating1_googleTranslate=googleTranslate_rating,
             translation2_chatGPT=chatGPT_translation,
@@ -298,10 +302,10 @@ def askDeepL():
         target_language = "ES"
     elif (language_input == "spa_to_eng"):
         source_language = "ES"
-        target_language = "EN"
+        target_language = "EN-US"
     elif (language_input == "fre_to_eng"):
         source_language = "FR"
-        target_language = "EN"
+        target_language = "EN-US"
     elif (language_input == "eng_to_fre"):
         source_language = "EN"
         target_language = "FR"

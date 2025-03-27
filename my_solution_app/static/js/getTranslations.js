@@ -49,6 +49,7 @@ $(document).ready(function() {
                                 <strong>ID:</strong> ${translation.id}<br>
                                 <strong>Date added:</strong> ${translation.date_added}<br>
                                 <strong>Direction:</strong> ${translation.direction}<br>
+                                <strong>Category:</strong> ${translation.category}<br>
                                 <strong>Text:</strong> ${translation.text}<br>
 
                                 <strong class="${getRatingClass(translation.rating1_googleTranslate)}">

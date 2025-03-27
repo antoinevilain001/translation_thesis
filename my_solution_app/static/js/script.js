@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var user_input;
     var language_sel;
+    var category;
     var googleTranslate_translation;
     var chatGPT_translation;
     var chatGPTmini_translation;
@@ -17,6 +18,7 @@ $(document).ready(function() {
 
         // get inputs and start processing
         user_input = $('#prompt').val();
+        category = $('#category').val();
         language_sel = $('input[name="choice"]:checked').val(); 
         $('#ChatGPT_header').removeClass('d-none');
         $('#ChatGPT_response').html("ChatGPT Processing");
@@ -111,6 +113,7 @@ $(document).ready(function() {
    // Add event listener to the submit button
     document.getElementById('submit-rating').addEventListener('click', function(event) {
         event.preventDefault();  // Prevent the form from submitting (page refresh)
+        $('#submissionResponse').html('<b>Submitting Response...</b>');
 
         // Initialize an array to store the ratings
         const ratings = [];
@@ -139,6 +142,7 @@ $(document).ready(function() {
         data = {
             prompt: user_input,
             option: language_sel,
+            category: category,
             googleTranslate_translation: googleTranslate_translation,
             googleTranslate_rating: googleTranslate_rating.rating,
             chatGPT_translation: chatGPT_translation,
@@ -157,6 +161,7 @@ $(document).ready(function() {
                 console.log("Ajax success");
                 console.log(response);
                 $('#submissionResponse').html('<b>Submitted!</b>');
+                $('#creationResponse').html('<p>Translation stored successfully.</p>');
             },
             error: function(xhr, status, error) {
                 // Handle errors here

@@ -34,18 +34,22 @@
                     <input type="radio" class="form-check-input" id="option4" name="choice" value="fre_to_eng">
                     <label class="form-check-label" for="option4">French to English</label>
                 </div>
+
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category:</label>
+                    <input type="text" id="category" name="category" value="misc" maxlength="100" placeholder="Enter category" class="form-control w-25"/>
+                </div>
             
                 <!-- Textarea for user input -->
                 <div class="mb-3">
-                    <label for="prompt" class="form-label">Your question:</label>
+                    <label for="prompt" class="form-label">Text to Translate:</label>
                     <textarea id="prompt" name="prompt" class="form-control" rows="4" cols="50"></textarea>
                 </div>
+                <br>
             
                 <!-- Submit Button -->
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-
-            <br>
 
             <!-- Responses -->
             <b id="GoogleTranslate_header" class="d-none">GoogleTranslate: </b>

@@ -1,4 +1,4 @@
-# api_access
+# translation_thesis
 This project connects to both a Google Translate and ChatGPT in order to translate between them, and stores the user's preferred translation.
 
 ### Windows Setup
@@ -8,6 +8,17 @@ venv\Scripts\activate
 pip install -r requirements.txt
 python -m ipykernel install --user --name=venv --display-name "Python (venv)"
 deactivate
+```
+
+### App Setup
+- requires having a .env file in the directory with the following:
+    - OPENAI_API_KEY
+    - GOOGLE_API_KEY
+    - DEEPL_API_KEY
+    - HUGGINGFACE_TOKEN not required since model is not being run in real time
+```
+cd my_solution_app
+create_db.py
 ```
 
 ### Public database
