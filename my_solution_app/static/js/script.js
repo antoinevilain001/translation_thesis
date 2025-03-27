@@ -1,3 +1,10 @@
+function filterText(text) {
+    text = decodeHTMLEntities(text);
+    text = text.replace(/["“”]/g, '');
+    text = text.replace(/’/g, "'");
+    return text;
+}
+
 $(document).ready(function() {
     var user_input;
     var language_sel;
@@ -18,6 +25,7 @@ $(document).ready(function() {
 
         // get inputs and start processing
         user_input = $('#prompt').val().replace(/["“”]/g, '');
+
         category = $('#category').val();
         language_sel = $('input[name="choice"]:checked').val(); 
         $('#ChatGPT_header').removeClass('d-none');
