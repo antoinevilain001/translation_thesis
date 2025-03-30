@@ -100,7 +100,7 @@ $(document).ready(function() {
                                 <tbody>
                                     <tr>
                                         <td>Total</td>
-                                        <td>${(total / total * 100).toFixed(2)}%</td>
+                                        <td>${total}</td>
                                     </tr>
                                     <tr>
                                         <td>Google Translate</td>
