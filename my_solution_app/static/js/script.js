@@ -57,7 +57,7 @@ $(document).ready(function() {
             success: function(data) {
                 if (data.response) {
                     $('#ChatGPTmini_response').html(data.response);
-                    chatGPT_translation = data.response; //** This is a bug that has been worked around, this should be mini
+                    chatGPTmini_translation = data.response; //** Fixed a bug where this used to not be mini
                 } else if (data.error) {
                     $('#ChatGPTmini_response').html("<b>Error:</b> " + data.error);
                 } else {
@@ -72,7 +72,7 @@ $(document).ready(function() {
             success: function(data) {
                 if (data.response) {
                     $('#ChatGPT_response').html(data.response);
-                    chatGPTmini_translation = data.response; //** This is a bug that has been worked around, this should not be mini
+                    chatGPT_translation = data.response; //** Fixed a bug where this used to be mini
                 } else if (data.error) {
                     $('#ChatGPT_response').html("<b>Error:</b> " + data.error);
                 } else {
