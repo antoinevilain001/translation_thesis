@@ -1,0 +1,710 @@
+Row 1 contains duplicated scores: [0.86326754 0.86574668 0.86574668 0.86326754]
+  Duplicate scores at positions 0 and 3: 0.8632675409317017
+    Translation 0: Without even having to talk to him, he knows what's wrong.
+    Translation 3: Without even having to talk to him, he knows what's wrong.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.8657466769218445
+    Translation 1: Without even having to talk to him, he knows what is wrong.
+    Translation 2: Without even having to talk to him, he knows what is wrong.
+    ✅ Translations match!
+Row 4 contains duplicated scores: [0.84729016 0.79801756 0.79801756 0.84729016]
+  Duplicate scores at positions 0 and 3: 0.8472901582717896
+    Translation 0: Tell us who gives birth to irresponsible people?
+    Translation 3: Tell us who gives birth to irresponsible people?
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.7980175614356995
+    Translation 1: Tell us who gives birth to the irresponsible?
+    Translation 2: Tell us who gives birth to the irresponsible?
+    ✅ Translations match!
+Row 5 contains duplicated scores: [0.86295247 0.84657443 0.85281003 0.85281003]
+  Duplicate scores at positions 2 and 3: 0.8528100252151489
+    Translation 2: I've counted my fingers at least a thousand times.
+    Translation 3: I've counted my fingers at least a thousand times.
+    ✅ Translations match!
+Row 15 contains duplicated scores: [0.89268315 0.88824069 0.88824069 0.89261049]
+  Duplicate scores at positions 1 and 2: 0.8882406949996948
+    Translation 1: Les usines fermeront très rapidement. Cela affectera le secteur des pièces, car nous n'avons pas besoin de personnes fabriquant des pièces pour des véhicules qui ne sont pas fabriqués.
+    Translation 2: Les usines fermeront très rapidement. Cela affectera le secteur des pièces, car nous n'avons pas besoin de personnes fabriquant des pièces pour des véhicules qui ne sont pas fabriqués.
+    ✅ Translations match!
+Row 17 contains duplicated scores: [0.85603231 0.85603231 0.85527176 0.86017257]
+  Duplicate scores at positions 0 and 1: 0.8560323119163513
+    Translation 0: In this Catholic Jubilee year, the flow of visitors traveling through the historic center of the Eternal City has never been so dense.
+    Translation 1: In this Catholic Jubilee year, the flow of visitors traveling through the historic center of the Eternal City has never been so dense.
+    ✅ Translations match!
+Row 21 contains duplicated scores: [0.78110784 0.80469579 0.7792359  0.78110784]
+  Duplicate scores at positions 0 and 3: 0.7811078429222107
+    Translation 0: Deployed around the fountain, security guards call to order tourists with tired legs who want to sit on the edge after taking their inevitable selfies.
+    Translation 3: Deployed around the fountain, security guards call to order tourists with tired legs who want to sit on the edge after taking their inevitable selfies.
+    ✅ Translations match!
+Row 22 contains duplicated scores: [0.86539114 0.8676821  0.8676821  0.86539114]
+  Duplicate scores at positions 0 and 3: 0.8653911352157593
+    Translation 0: Sometimes it feels a bit like looking after a flock of sheep.
+    Translation 3: Sometimes it feels a bit like looking after a flock of sheep.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.8676820993423462
+    Translation 1: Sometimes, it feels a bit like taking care of a flock of sheep.
+    Translation 2: Sometimes, it feels a bit like taking care of a flock of sheep.
+    ✅ Translations match!
+Row 24 contains duplicated scores: [0.88629663 0.88629663 0.88629663 0.88538146]
+  Duplicate scores at positions 0 and 1: 0.8862966299057007
+    Translation 0: Is your city the most peaceful in France or the most dangerous?
+    Translation 1: Is your city the most peaceful in France or the most dangerous?
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 2: 0.8862966299057007
+    Translation 0: Is your city the most peaceful in France or the most dangerous?
+    Translation 2: Is your city the most peaceful in France or the most dangerous?
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.8862966299057007
+    Translation 1: Is your city the most peaceful in France or the most dangerous?
+    Translation 2: Is your city the most peaceful in France or the most dangerous?
+    ✅ Translations match!
+Row 27 contains duplicated scores: [0.8590427 0.8458243 0.8590427 0.8590427]
+  Duplicate scores at positions 0 and 2: 0.8590427041053772
+    Translation 0: Based on these statistics, the annual rankings proposed by a number of newspapers and magazines do not use the same methodology.
+    Translation 2: Based on these statistics, the annual rankings proposed by a number of newspapers and magazines do not use the same methodology.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 3: 0.8590427041053772
+    Translation 0: Based on these statistics, the annual rankings proposed by a number of newspapers and magazines do not use the same methodology.
+    Translation 3: Based on these statistics, the annual rankings proposed by a number of newspapers and magazines do not use the same methodology.
+    ✅ Translations match!
+  Duplicate scores at positions 2 and 3: 0.8590427041053772
+    Translation 2: Based on these statistics, the annual rankings proposed by a number of newspapers and magazines do not use the same methodology.
+    Translation 3: Based on these statistics, the annual rankings proposed by a number of newspapers and magazines do not use the same methodology.
+    ✅ Translations match!
+Row 31 contains duplicated scores: [0.86519033 0.86734247 0.86734247 0.86734247]
+  Duplicate scores at positions 1 and 2: 0.867342472076416
+    Translation 1: He says he wants to rebalance relations with importing countries to revive the automotive industry on American soil.
+    Translation 2: He says he wants to rebalance relations with importing countries to revive the automotive industry on American soil.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 3: 0.867342472076416
+    Translation 1: He says he wants to rebalance relations with importing countries to revive the automotive industry on American soil.
+    Translation 3: He says he wants to rebalance relations with importing countries to revive the automotive industry on American soil.
+    ✅ Translations match!
+  Duplicate scores at positions 2 and 3: 0.867342472076416
+    Translation 2: He says he wants to rebalance relations with importing countries to revive the automotive industry on American soil.
+    Translation 3: He says he wants to rebalance relations with importing countries to revive the automotive industry on American soil.
+    ✅ Translations match!
+Row 32 contains duplicated scores: [0.88627285 0.8865177  0.88627285 0.88679546]
+  Duplicate scores at positions 0 and 2: 0.8862728476524353
+    Translation 0: American cars are more expensive, too big, and consume too much gas.
+    Translation 2: American cars are more expensive, too big, and consume too much gas.
+    ✅ Translations match!
+Row 35 contains duplicated scores: [0.84311277 0.84311277 0.84311277 0.83900839]
+  Duplicate scores at positions 0 and 1: 0.8431127667427063
+    Translation 0: A little further on, Carson goes around the dealerships to compare prices.
+    Translation 1: A little further on, Carson goes around the dealerships to compare prices.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 2: 0.8431127667427063
+    Translation 0: A little further on, Carson goes around the dealerships to compare prices.
+    Translation 2: A little further on, Carson goes around the dealerships to compare prices.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.8431127667427063
+    Translation 1: A little further on, Carson goes around the dealerships to compare prices.
+    Translation 2: A little further on, Carson goes around the dealerships to compare prices.
+    ✅ Translations match!
+Row 39 contains duplicated scores: [0.87155467 0.87155467 0.87155467 0.87155467]
+  Duplicate scores at positions 0 and 1: 0.8715546727180481
+    Translation 0: It is probably the only American base not surrounded by a protective fence.
+    Translation 1: It is probably the only American base not surrounded by a protective fence.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 2: 0.8715546727180481
+    Translation 0: It is probably the only American base not surrounded by a protective fence.
+    Translation 2: It is probably the only American base not surrounded by a protective fence.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 3: 0.8715546727180481
+    Translation 0: It is probably the only American base not surrounded by a protective fence.
+    Translation 3: It is probably the only American base not surrounded by a protective fence.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.8715546727180481
+    Translation 1: It is probably the only American base not surrounded by a protective fence.
+    Translation 2: It is probably the only American base not surrounded by a protective fence.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 3: 0.8715546727180481
+    Translation 1: It is probably the only American base not surrounded by a protective fence.
+    Translation 3: It is probably the only American base not surrounded by a protective fence.
+    ✅ Translations match!
+  Duplicate scores at positions 2 and 3: 0.8715546727180481
+    Translation 2: It is probably the only American base not surrounded by a protective fence.
+    Translation 3: It is probably the only American base not surrounded by a protective fence.
+    ✅ Translations match!
+Row 42 contains duplicated scores: [0.89740068 0.89691746 0.89691746 0.89704394]
+  Duplicate scores at positions 1 and 2: 0.896917462348938
+    Translation 1: The American military presence in northern Greenland dates back to the end of World War II.
+    Translation 2: The American military presence in northern Greenland dates back to the end of World War II.
+    ✅ Translations match!
+Row 43 contains duplicated scores: [0.88581973 0.88529265 0.88529265 0.88462126]
+  Duplicate scores at positions 1 and 2: 0.885292649269104
+    Translation 1: It was from this installation that the Americans were supposed to be able to intercept Soviet planes carrying atomic bombs.
+    Translation 2: It was from this installation that the Americans were supposed to be able to intercept Soviet planes carrying atomic bombs.
+    ✅ Translations match!
+Row 46 contains duplicated scores: [0.86742848 0.86998653 0.87117678 0.86742848]
+  Duplicate scores at positions 0 and 3: 0.8674284815788269
+    Translation 0: The Pituffik base also serves as a research center, particularly in the space sector.
+    Translation 3: The Pituffik base also serves as a research center, particularly in the space sector.
+    ✅ Translations match!
+Row 51 contains duplicated scores: [0.87150139 0.8698312  0.8698312  0.87150139]
+  Duplicate scores at positions 0 and 3: 0.8715013861656189
+    Translation 0: Finally, there is also a feeling of insecurity linked to the presence of this base.
+    Translation 3: Finally, there is also a feeling of insecurity linked to the presence of this base.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.8698312044143677
+    Translation 1: Finally, there is also a feeling of insecurity related to the presence of this base.
+    Translation 2: Finally, there is also a feeling of insecurity related to the presence of this base.
+    ✅ Translations match!
+Row 52 contains duplicated scores: [0.87787187 0.88019174 0.87787187 0.87787187]
+  Duplicate scores at positions 0 and 2: 0.8778718709945679
+    Translation 0: In the event of a nuclear conflict, Greenlanders know that their territory would be a priority target because of this facility.
+    Translation 2: In the event of a nuclear conflict, Greenlanders know that their territory would be a priority target because of this facility.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 3: 0.8778718709945679
+    Translation 0: In the event of a nuclear conflict, Greenlanders know that their territory would be a priority target because of this facility.
+    Translation 3: In the event of a nuclear conflict, Greenlanders know that their territory would be a priority target because of this facility.
+    ✅ Translations match!
+  Duplicate scores at positions 2 and 3: 0.8778718709945679
+    Translation 2: In the event of a nuclear conflict, Greenlanders know that their territory would be a priority target because of this facility.
+    Translation 3: In the event of a nuclear conflict, Greenlanders know that their territory would be a priority target because of this facility.
+    ✅ Translations match!
+Row 53 contains duplicated scores: [0.86814892 0.86298501 0.86831546 0.86814892]
+  Duplicate scores at positions 0 and 3: 0.868148922920227
+    Translation 0: The United States can also freely expand its presence in the base area.
+    Translation 3: The United States can also freely expand its presence in the base area.
+    ✅ Translations match!
+Row 55 contains duplicated scores: [0.90062732 0.9002561  0.90062732 0.90152812]
+  Duplicate scores at positions 0 and 2: 0.9006273150444031
+    Translation 0: La réduction de l'aide au développement aux États-Unis et en Europe aura des conséquences humaines dramatiques dans le monde entier, avertissent l'Organisation mondiale de la santé (OMS), l'UNICEF et d'autres organisations internationales.
+    Translation 2: La réduction de l'aide au développement aux États-Unis et en Europe aura des conséquences humaines dramatiques dans le monde entier, avertissent l'Organisation mondiale de la santé (OMS), l'UNICEF et d'autres organisations internationales.
+    ✅ Translations match!
+Row 56 contains duplicated scores: [0.85490549 0.8241691  0.85155314 0.85490549]
+  Duplicate scores at positions 0 and 3: 0.8549054861068726
+    Translation 0: Didn't we treat your wounded on the battlefield?
+    Translation 3: Didn't we treat your wounded on the battlefield?
+    ✅ Translations match!
+Row 58 contains duplicated scores: [0.86165547 0.85895336 0.86233306 0.86165547]
+  Duplicate scores at positions 0 and 3: 0.8616554737091064
+    Translation 0: We need peasants, and peasants, and more peasants.
+    Translation 3: We need peasants, and peasants, and more peasants.
+    ✅ Translations match!
+Row 60 contains duplicated scores: [0.80254441 0.80254441 0.77747589 0.8470242 ]
+  Duplicate scores at positions 0 and 1: 0.8025444149971008
+    Translation 0: I have always been unsuspecting, especially with those who compliment me.
+    Translation 1: I have always been unsuspecting, especially with those who compliment me.
+    ✅ Translations match!
+Row 62 contains duplicated scores: [0.84417951 0.84622931 0.81889755 0.81889755]
+  Duplicate scores at positions 2 and 3: 0.818897545337677
+    Translation 2: If he interrupted himself two or three times, it was to relight his pipe.
+    Translation 3: If he interrupted himself two or three times, it was to relight his pipe.
+    ✅ Translations match!
+Row 63 contains duplicated scores: [0.76303679 0.77412343 0.77412343 0.76215971]
+  Duplicate scores at positions 1 and 2: 0.7741234302520752
+    Translation 1: He smoked regularly, in equal puffs, like the chimney of a steam engine.
+    Translation 2: He smoked regularly, in equal puffs, like the chimney of a steam engine.
+    ✅ Translations match!
+Row 64 contains duplicated scores: [0.86054903 0.86054903 0.8613652  0.85567677]
+  Duplicate scores at positions 0 and 1: 0.8605490326881409
+    Translation 0: Every time I happened to glance at him, I saw him calm and smiling, in the middle of a cloud, like Jupiter in the fifth act of Amphitryon.
+    Translation 1: Every time I happened to glance at him, I saw him calm and smiling, in the middle of a cloud, like Jupiter in the fifth act of Amphitryon.
+    ✅ Translations match!
+Row 65 contains duplicated scores: [0.84685928 0.85448688 0.85448688 0.84685928]
+  Duplicate scores at positions 0 and 3: 0.8468592762947083
+    Translation 0: We were told that lunch was served.
+    Translation 3: We were told that lunch was served.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.854486882686615
+    Translation 1: We were informed that lunch was served.
+    Translation 2: We were informed that lunch was served.
+    ✅ Translations match!
+Row 73 contains duplicated scores: [0.86015254 0.84719557 0.86051714 0.86051714]
+  Duplicate scores at positions 2 and 3: 0.860517144203186
+    Translation 2: From that moment on, people stopped calling me the doctor.
+    Translation 3: From that moment on, people stopped calling me the doctor.
+    ✅ Translations match!
+Row 74 contains duplicated scores: [0.84358746 0.82961738 0.82961738 0.83466011]
+  Duplicate scores at positions 1 and 2: 0.8296173810958862
+    Translation 1: He hoped that I would return married.
+    Translation 2: He hoped that I would return married.
+    ✅ Translations match!
+Row 78 contains duplicated scores: [0.85939437 0.85857415 0.85903627 0.85939437]
+  Duplicate scores at positions 0 and 3: 0.859394371509552
+    Translation 0: Pierre Paul-Hus had just promised a deferral of capital gains tax when profits from the sale of land or a house are reinvested in Canada.
+    Translation 3: Pierre Paul-Hus had just promised a deferral of capital gains tax when profits from the sale of land or a house are reinvested in Canada.
+    ✅ Translations match!
+Row 81 contains duplicated scores: [0.87322652 0.87322652 0.87322652 0.87198126]
+  Duplicate scores at positions 0 and 1: 0.873226523399353
+    Translation 0: It will be the same liberal results if they are elected for a fourth time.
+    Translation 1: It will be the same liberal results if they are elected for a fourth time.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 2: 0.873226523399353
+    Translation 0: It will be the same liberal results if they are elected for a fourth time.
+    Translation 2: It will be the same liberal results if they are elected for a fourth time.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.873226523399353
+    Translation 1: It will be the same liberal results if they are elected for a fourth time.
+    Translation 2: It will be the same liberal results if they are elected for a fourth time.
+    ✅ Translations match!
+Row 82 contains duplicated scores: [0.85867828 0.85867828 0.85867828 0.85297906]
+  Duplicate scores at positions 0 and 1: 0.8586782813072205
+    Translation 0: He was surrounded by workers during his announcement.
+    Translation 1: He was surrounded by workers during his announcement.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 2: 0.8586782813072205
+    Translation 0: He was surrounded by workers during his announcement.
+    Translation 2: He was surrounded by workers during his announcement.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.8586782813072205
+    Translation 1: He was surrounded by workers during his announcement.
+    Translation 2: He was surrounded by workers during his announcement.
+    ✅ Translations match!
+Row 86 contains duplicated scores: [0.83426088 0.83878309 0.83878309 0.83373749]
+  Duplicate scores at positions 1 and 2: 0.8387830853462219
+    Translation 1: The night had already fallen, but in order to conserve a bit of her oil supply, she had waited for complete darkness.
+    Translation 2: The night had already fallen, but in order to conserve a bit of her oil supply, she had waited for complete darkness.
+    ✅ Translations match!
+Row 90 contains duplicated scores: [0.72184718 0.72184718 0.72184718 0.81563312]
+  Duplicate scores at positions 0 and 1: 0.7218471765518188
+    Translation 0: A punch on the door interrupted her soliloquy and made her jump.
+    Translation 1: A punch on the door interrupted her soliloquy and made her jump.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 2: 0.7218471765518188
+    Translation 0: A punch on the door interrupted her soliloquy and made her jump.
+    Translation 2: A punch on the door interrupted her soliloquy and made her jump.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.7218471765518188
+    Translation 1: A punch on the door interrupted her soliloquy and made her jump.
+    Translation 2: A punch on the door interrupted her soliloquy and made her jump.
+    ✅ Translations match!
+Row 91 contains duplicated scores: [0.85295689 0.85295689 0.84836006 0.86178309]
+  Duplicate scores at positions 0 and 1: 0.8529568910598755
+    Translation 0: Upon waking, the situation remained, naturally, very tense.
+    Translation 1: Upon waking, the situation remained, naturally, very tense.
+    ✅ Translations match!
+Row 92 contains duplicated scores: [0.87372851 0.8741563  0.87330753 0.87372851]
+  Duplicate scores at positions 0 and 3: 0.8737285137176514
+    Translation 0: When all else fails, you can try putting a donation button on your game page and asking for community support.
+    Translation 3: When all else fails, you can try putting a donation button on your game page and asking for community support.
+    ✅ Translations match!
+Row 93 contains duplicated scores: [0.85630095 0.86230052 0.86230052 0.86143655]
+  Duplicate scores at positions 1 and 2: 0.8623005151748657
+    Translation 1: If your work is a serious endeavor on the path to becoming an independent game developer capable of making a living, read on and see what your options are.
+    Translation 2: If your work is a serious endeavor on the path to becoming an independent game developer capable of making a living, read on and see what your options are.
+    ✅ Translations match!
+Row 95 contains duplicated scores: [0.87076098 0.87379843 0.87379843 0.87686777]
+  Duplicate scores at positions 1 and 2: 0.8737984299659729
+    Translation 1: So you brought back a dog?
+    Translation 2: So you brought back a dog?
+    ✅ Translations match!
+Row 97 contains duplicated scores: [0.87232494 0.87155801 0.87155801 0.87155801]
+  Duplicate scores at positions 1 and 2: 0.8715580105781555
+    Translation 1: The worst cases were when you could use real money to pay for advantages over other players, or when they restricted access to the next stages of the game unless players paid.
+    Translation 2: The worst cases were when you could use real money to pay for advantages over other players, or when they restricted access to the next stages of the game unless players paid.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 3: 0.8715580105781555
+    Translation 1: The worst cases were when you could use real money to pay for advantages over other players, or when they restricted access to the next stages of the game unless players paid.
+    Translation 3: The worst cases were when you could use real money to pay for advantages over other players, or when they restricted access to the next stages of the game unless players paid.
+    ✅ Translations match!
+  Duplicate scores at positions 2 and 3: 0.8715580105781555
+    Translation 2: The worst cases were when you could use real money to pay for advantages over other players, or when they restricted access to the next stages of the game unless players paid.
+    Translation 3: The worst cases were when you could use real money to pay for advantages over other players, or when they restricted access to the next stages of the game unless players paid.
+    ✅ Translations match!
+Row 98 contains duplicated scores: [0.86129636 0.86132973 0.86132973 0.86023617]
+  Duplicate scores at positions 1 and 2: 0.8613297343254089
+    Translation 1: If you are well known, they can contact you.
+    Translation 2: If you are well known, they can contact you.
+    ✅ Translations match!
+Row 99 contains duplicated scores: [0.86081129 0.85431999 0.86081129 0.87180287]
+  Duplicate scores at positions 0 and 2: 0.8608112931251526
+    Translation 0: I apologize to the children for dedicating this book to a grown-up.
+    Translation 2: I apologize to the children for dedicating this book to a grown-up.
+    ✅ Translations match!
+Row 100 contains duplicated scores: [0.86263454 0.86263454 0.86263454 0.86759359]
+  Duplicate scores at positions 0 and 1: 0.862634539604187
+    Translation 0: She really needs to be comforted.
+    Translation 1: She really needs to be comforted.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 2: 0.862634539604187
+    Translation 0: She really needs to be comforted.
+    Translation 2: She really needs to be comforted.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.862634539604187
+    Translation 1: She really needs to be comforted.
+    Translation 2: She really needs to be comforted.
+    ✅ Translations match!
+Row 105 contains duplicated scores: [0.87196833 0.87196833 0.87196833 0.87196833]
+  Duplicate scores at positions 0 and 1: 0.8719683289527893
+    Translation 0: I showed my masterpiece to the adults and asked them if my drawing scared them.
+    Translation 1: I showed my masterpiece to the adults and asked them if my drawing scared them.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 2: 0.8719683289527893
+    Translation 0: I showed my masterpiece to the adults and asked them if my drawing scared them.
+    Translation 2: I showed my masterpiece to the adults and asked them if my drawing scared them.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 3: 0.8719683289527893
+    Translation 0: I showed my masterpiece to the adults and asked them if my drawing scared them.
+    Translation 3: I showed my masterpiece to the adults and asked them if my drawing scared them.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.8719683289527893
+    Translation 1: I showed my masterpiece to the adults and asked them if my drawing scared them.
+    Translation 2: I showed my masterpiece to the adults and asked them if my drawing scared them.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 3: 0.8719683289527893
+    Translation 1: I showed my masterpiece to the adults and asked them if my drawing scared them.
+    Translation 3: I showed my masterpiece to the adults and asked them if my drawing scared them.
+    ✅ Translations match!
+  Duplicate scores at positions 2 and 3: 0.8719683289527893
+    Translation 2: I showed my masterpiece to the adults and asked them if my drawing scared them.
+    Translation 3: I showed my masterpiece to the adults and asked them if my drawing scared them.
+    ✅ Translations match!
+Row 106 contains duplicated scores: [0.86722803 0.86722803 0.86722803 0.86722803]
+  Duplicate scores at positions 0 and 1: 0.8672280311584473
+    Translation 0: Why would a hat be scary?
+    Translation 1: Why would a hat be scary?
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 2: 0.8672280311584473
+    Translation 0: Why would a hat be scary?
+    Translation 2: Why would a hat be scary?
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 3: 0.8672280311584473
+    Translation 0: Why would a hat be scary?
+    Translation 3: Why would a hat be scary?
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.8672280311584473
+    Translation 1: Why would a hat be scary?
+    Translation 2: Why would a hat be scary?
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 3: 0.8672280311584473
+    Translation 1: Why would a hat be scary?
+    Translation 3: Why would a hat be scary?
+    ✅ Translations match!
+  Duplicate scores at positions 2 and 3: 0.8672280311584473
+    Translation 2: Why would a hat be scary?
+    Translation 3: Why would a hat be scary?
+    ✅ Translations match!
+Row 108 contains duplicated scores: [0.84713286 0.84829038 0.84829038 0.84822929]
+  Duplicate scores at positions 1 and 2: 0.8482903838157654
+    Translation 1: I then drew the inside of the boa constrictor so that adults could understand.
+    Translation 2: I then drew the inside of the boa constrictor so that adults could understand.
+    ✅ Translations match!
+Row 109 contains duplicated scores: [0.84286755 0.84286755 0.84286755 0.79073107]
+  Duplicate scores at positions 0 and 1: 0.8428675532341003
+    Translation 0: They always need explanations.
+    Translation 1: They always need explanations.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 2: 0.8428675532341003
+    Translation 0: They always need explanations.
+    Translation 2: They always need explanations.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.8428675532341003
+    Translation 1: They always need explanations.
+    Translation 2: They always need explanations.
+    ✅ Translations match!
+Row 112 contains duplicated scores: [0.85142612 0.85092992 0.85092992 0.85092992]
+  Duplicate scores at positions 1 and 2: 0.8509299159049988
+    Translation 1: I had been discouraged by the failure of my drawing number 1 and my drawing number 2.
+    Translation 2: I had been discouraged by the failure of my drawing number 1 and my drawing number 2.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 3: 0.8509299159049988
+    Translation 1: I had been discouraged by the failure of my drawing number 1 and my drawing number 2.
+    Translation 3: I had been discouraged by the failure of my drawing number 1 and my drawing number 2.
+    ✅ Translations match!
+  Duplicate scores at positions 2 and 3: 0.8509299159049988
+    Translation 2: I had been discouraged by the failure of my drawing number 1 and my drawing number 2.
+    Translation 3: I had been discouraged by the failure of my drawing number 1 and my drawing number 2.
+    ✅ Translations match!
+Row 113 contains duplicated scores: [0.87488252 0.87528592 0.87488252 0.87454957]
+  Duplicate scores at positions 0 and 2: 0.8748825192451477
+    Translation 0: Adults never understand anything on their own, and it's tiring for children to always have to give them explanations.
+    Translation 2: Adults never understand anything on their own, and it's tiring for children to always have to give them explanations.
+    ✅ Translations match!
+Row 115 contains duplicated scores: [0.86568362 0.85639817 0.87319326 0.86568362]
+  Duplicate scores at positions 0 and 3: 0.8656836152076721
+    Translation 0: I've flown all over the world. And geography, it's true, has served me well.
+    Translation 3: I've flown all over the world. And geography, it's true, has served me well.
+    ✅ Translations match!
+Row 118 contains duplicated scores: [0.81550485 0.80391151 0.81977606 0.81550485]
+  Duplicate scores at positions 0 and 3: 0.8155048489570618
+    Translation 0: I've lived a lot with adults.
+    Translation 3: I've lived a lot with adults.
+    ✅ Translations match!
+Row 121 contains duplicated scores: [0.86627918 0.86627918 0.86627918 0.86627918]
+  Duplicate scores at positions 0 and 1: 0.8662791848182678
+    Translation 0: I wanted to know if she was really understanding.
+    Translation 1: I wanted to know if she was really understanding.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 2: 0.8662791848182678
+    Translation 0: I wanted to know if she was really understanding.
+    Translation 2: I wanted to know if she was really understanding.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 3: 0.8662791848182678
+    Translation 0: I wanted to know if she was really understanding.
+    Translation 3: I wanted to know if she was really understanding.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.8662791848182678
+    Translation 1: I wanted to know if she was really understanding.
+    Translation 2: I wanted to know if she was really understanding.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 3: 0.8662791848182678
+    Translation 1: I wanted to know if she was really understanding.
+    Translation 3: I wanted to know if she was really understanding.
+    ✅ Translations match!
+  Duplicate scores at positions 2 and 3: 0.8662791848182678
+    Translation 2: I wanted to know if she was really understanding.
+    Translation 3: I wanted to know if she was really understanding.
+    ✅ Translations match!
+Row 123 contains duplicated scores: [0.82069963 0.82069963 0.81495732 0.82069963]
+  Duplicate scores at positions 0 and 1: 0.8206996321678162
+    Translation 0: I put myself within his reach.
+    Translation 1: I put myself within his reach.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 3: 0.8206996321678162
+    Translation 0: I put myself within his reach.
+    Translation 3: I put myself within his reach.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 3: 0.8206996321678162
+    Translation 1: I put myself within his reach.
+    Translation 3: I put myself within his reach.
+    ✅ Translations match!
+Row 127 contains duplicated scores: [0.87527639 0.87366217 0.87510937 0.87527639]
+  Duplicate scores at positions 0 and 3: 0.8752763867378235
+    Translation 0: It was a matter of life and death for me. I barely had enough water to drink for eight days.
+    Translation 3: It was a matter of life and death for me. I barely had enough water to drink for eight days.
+    ✅ Translations match!
+Row 129 contains duplicated scores: [0.87323821 0.86687577 0.86448932 0.86687577]
+  Duplicate scores at positions 1 and 3: 0.8668757677078247
+    Translation 1: You can imagine my surprise, at daybreak, when a funny little voice woke me up.
+    Translation 3: You can imagine my surprise, at daybreak, when a funny little voice woke me up.
+    ✅ Translations match!
+Row 130 contains duplicated scores: [0.86657387 0.86657387 0.86657387 0.86657387]
+  Duplicate scores at positions 0 and 1: 0.8665738701820374
+    Translation 0: Please draw me a sheep.
+    Translation 1: Please draw me a sheep.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 2: 0.8665738701820374
+    Translation 0: Please draw me a sheep.
+    Translation 2: Please draw me a sheep.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 3: 0.8665738701820374
+    Translation 0: Please draw me a sheep.
+    Translation 3: Please draw me a sheep.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.8665738701820374
+    Translation 1: Please draw me a sheep.
+    Translation 2: Please draw me a sheep.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 3: 0.8665738701820374
+    Translation 1: Please draw me a sheep.
+    Translation 3: Please draw me a sheep.
+    ✅ Translations match!
+  Duplicate scores at positions 2 and 3: 0.8665738701820374
+    Translation 2: Please draw me a sheep.
+    Translation 3: Please draw me a sheep.
+    ✅ Translations match!
+Row 131 contains duplicated scores: [0.84214276 0.85405111 0.85405111 0.84214276]
+  Duplicate scores at positions 0 and 3: 0.8421427607536316
+    Translation 0: I jumped to my feet as if struck by lightning.
+    Translation 3: I jumped to my feet as if struck by lightning.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.8540511131286621
+    Translation 1: I jumped to my feet as if I had been struck by lightning.
+    Translation 2: I jumped to my feet as if I had been struck by lightning.
+    ✅ Translations match!
+Row 134 contains duplicated scores: [0.84095669 0.85047954 0.85047954 0.84797007]
+  Duplicate scores at positions 1 and 2: 0.8504795432090759
+    Translation 1: My drawing, of course, is much less charming than the model.
+    Translation 2: My drawing, of course, is much less charming than the model.
+    ✅ Translations match!
+Row 136 contains duplicated scores: [0.84506714 0.83755141 0.83755141 0.80968118]
+  Duplicate scores at positions 1 and 2: 0.8375514149665833
+    Translation 1: I looked at this apparition with wide eyes of astonishment.
+    Translation 2: I looked at this apparition with wide eyes of astonishment.
+    ✅ Translations match!
+Row 145 contains duplicated scores: [0.71219003 0.85258991 0.85237467 0.85237467]
+  Duplicate scores at positions 2 and 3: 0.8523746728897095
+    Translation 2: I don't want an elephant in a boa.
+    Translation 3: I don't want an elephant in a boa.
+    ✅ Translations match!
+Row 147 contains duplicated scores: [0.84528947 0.84962648 0.84962648 0.84528947]
+  Duplicate scores at positions 0 and 3: 0.8452894687652588
+    Translation 0: This one is already very sick.
+    Translation 3: This one is already very sick.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.8496264815330505
+    Translation 1: That one is already very sick.
+    Translation 2: That one is already very sick.
+    ✅ Translations match!
+Row 148 contains duplicated scores: [0.83441514 0.83441514 0.83441514 0.83441514]
+  Duplicate scores at positions 0 and 1: 0.8344151377677917
+    Translation 0: Make another one.
+    Translation 1: Make another one.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 2: 0.8344151377677917
+    Translation 0: Make another one.
+    Translation 2: Make another one.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 3: 0.8344151377677917
+    Translation 0: Make another one.
+    Translation 3: Make another one.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.8344151377677917
+    Translation 1: Make another one.
+    Translation 2: Make another one.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 3: 0.8344151377677917
+    Translation 1: Make another one.
+    Translation 3: Make another one.
+    ✅ Translations match!
+  Duplicate scores at positions 2 and 3: 0.8344151377677917
+    Translation 2: Make another one.
+    Translation 3: Make another one.
+    ✅ Translations match!
+Row 150 contains duplicated scores: [0.85722393 0.84480464 0.85510236 0.85722393]
+  Duplicate scores at positions 0 and 3: 0.8572239279747009
+    Translation 0: So I redid my drawing again.
+    Translation 3: So I redid my drawing again.
+    ✅ Translations match!
+Row 151 contains duplicated scores: [0.85559684 0.85751164 0.85751164 0.85740459]
+  Duplicate scores at positions 1 and 2: 0.8575116395950317
+    Translation 1: That one is too old. I want a sheep that lives a long time.
+    Translation 2: That one is too old. I want a sheep that lives a long time.
+    ✅ Translations match!
+Row 152 contains duplicated scores: [0.84967667 0.84967667 0.84967667 0.85527474]
+  Duplicate scores at positions 0 and 1: 0.8496766686439514
+    Translation 0: Lacking patience, as I was eager to start dismantling my engine, I scribbled this drawing.
+    Translation 1: Lacking patience, as I was eager to start dismantling my engine, I scribbled this drawing.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 2: 0.8496766686439514
+    Translation 0: Lacking patience, as I was eager to start dismantling my engine, I scribbled this drawing.
+    Translation 2: Lacking patience, as I was eager to start dismantling my engine, I scribbled this drawing.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.8496766686439514
+    Translation 1: Lacking patience, as I was eager to start dismantling my engine, I scribbled this drawing.
+    Translation 2: Lacking patience, as I was eager to start dismantling my engine, I scribbled this drawing.
+    ✅ Translations match!
+Row 153 contains duplicated scores: [0.84527534 0.84753507 0.84750575 0.84527534]
+  Duplicate scores at positions 0 and 3: 0.845275342464447
+    Translation 0: This is the crate. The sheep you want is inside.
+    Translation 3: This is the crate. The sheep you want is inside.
+    ✅ Translations match!
+Row 154 contains duplicated scores: [0.87273073 0.86149597 0.86149597 0.87128425]
+  Duplicate scores at positions 1 and 2: 0.8614959716796875
+    Translation 1: I was quite surprised to see the face of my young judge light up.
+    Translation 2: I was quite surprised to see the face of my young judge light up.
+    ✅ Translations match!
+Row 155 contains duplicated scores: [0.86447066 0.86447066 0.86249357 0.86447066]
+  Duplicate scores at positions 0 and 1: 0.8644706606864929
+    Translation 0: That's exactly how I wanted it.
+    Translation 1: That's exactly how I wanted it.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 3: 0.8644706606864929
+    Translation 0: That's exactly how I wanted it.
+    Translation 3: That's exactly how I wanted it.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 3: 0.8644706606864929
+    Translation 1: That's exactly how I wanted it.
+    Translation 3: That's exactly how I wanted it.
+    ✅ Translations match!
+Row 156 contains duplicated scores: [0.8597942 0.8597942 0.8597942 0.8597942]
+  Duplicate scores at positions 0 and 1: 0.8597941994667053
+    Translation 0: Do you think this sheep needs a lot of grass?
+    Translation 1: Do you think this sheep needs a lot of grass?
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 2: 0.8597941994667053
+    Translation 0: Do you think this sheep needs a lot of grass?
+    Translation 2: Do you think this sheep needs a lot of grass?
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 3: 0.8597941994667053
+    Translation 0: Do you think this sheep needs a lot of grass?
+    Translation 3: Do you think this sheep needs a lot of grass?
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.8597941994667053
+    Translation 1: Do you think this sheep needs a lot of grass?
+    Translation 2: Do you think this sheep needs a lot of grass?
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 3: 0.8597941994667053
+    Translation 1: Do you think this sheep needs a lot of grass?
+    Translation 3: Do you think this sheep needs a lot of grass?
+    ✅ Translations match!
+  Duplicate scores at positions 2 and 3: 0.8597941994667053
+    Translation 2: Do you think this sheep needs a lot of grass?
+    Translation 3: Do you think this sheep needs a lot of grass?
+    ✅ Translations match!
+Row 157 contains duplicated scores: [0.84244752 0.83388495 0.83269638 0.84244752]
+  Duplicate scores at positions 0 and 3: 0.8424475193023682
+    Translation 0: I gave you a tiny sheep.
+    Translation 3: I gave you a tiny sheep.
+    ✅ Translations match!
+Row 158 contains duplicated scores: [0.86920744 0.86920744 0.86920744 0.85441071]
+  Duplicate scores at positions 0 and 1: 0.8692074418067932
+    Translation 0: That will surely be enough.
+    Translation 1: That will surely be enough.
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 2: 0.8692074418067932
+    Translation 0: That will surely be enough.
+    Translation 2: That will surely be enough.
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.8692074418067932
+    Translation 1: That will surely be enough.
+    Translation 2: That will surely be enough.
+    ✅ Translations match!
+Row 159 contains duplicated scores: [0.85795027 0.85815984 0.85815984 0.85290849]
+  Duplicate scores at positions 1 and 2: 0.8581598401069641
+    Translation 1: He tilted his head towards the drawing.
+    Translation 2: He tilted his head towards the drawing.
+    ✅ Translations match!
+Row 160 contains duplicated scores: [0.86433226 0.86923116 0.86923116 0.86433226]
+  Duplicate scores at positions 0 and 3: 0.8643322587013245
+    Translation 0: He fell asleep
+    Translation 3: He fell asleep
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.8692311644554138
+    Translation 1: He fell asleep.
+    Translation 2: He fell asleep.
+    ✅ Translations match!
+Row 161 contains duplicated scores: [0.87341535 0.85997289 0.87341535 0.86141932]
+  Duplicate scores at positions 0 and 2: 0.8734153509140015
+    Translation 0: This is how I met the little prince.
+    Translation 2: This is how I met the little prince.
+    ✅ Translations match!
+Row 162 contains duplicated scores: [0.85440308 0.85244745 0.85486984 0.85440308]
+  Duplicate scores at positions 0 and 3: 0.8544030785560608
+    Translation 0: The little prince, who asked me a lot of questions, never seemed to hear mine.
+    Translation 3: The little prince, who asked me a lot of questions, never seemed to hear mine.
+    ✅ Translations match!
+Row 165 contains duplicated scores: [0.78891248 0.78948629 0.78948629 0.69866019]
+  Duplicate scores at positions 1 and 2: 0.789486289024353
+    Translation 1: What is that thing?
+    Translation 2: What is that thing?
+    ✅ Translations match!
+Row 166 contains duplicated scores: [0.89233226 0.85073918 0.85073918 0.84440398]
+  Duplicate scores at positions 1 and 2: 0.8507391810417175
+    Translation 1: I was proud to teach him that I was flying.
+    Translation 2: I was proud to teach him that I was flying.
+    ✅ Translations match!
+Row 167 contains duplicated scores: [0.85803294 0.85803294 0.85803294 0.85803294]
+  Duplicate scores at positions 0 and 1: 0.8580329418182373
+    Translation 0: Did you fall from the sky?
+    Translation 1: Did you fall from the sky?
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 2: 0.8580329418182373
+    Translation 0: Did you fall from the sky?
+    Translation 2: Did you fall from the sky?
+    ✅ Translations match!
+  Duplicate scores at positions 0 and 3: 0.8580329418182373
+    Translation 0: Did you fall from the sky?
+    Translation 3: Did you fall from the sky?
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 2: 0.8580329418182373
+    Translation 1: Did you fall from the sky?
+    Translation 2: Did you fall from the sky?
+    ✅ Translations match!
+  Duplicate scores at positions 1 and 3: 0.8580329418182373
+    Translation 1: Did you fall from the sky?
+    Translation 3: Did you fall from the sky?
+    ✅ Translations match!
+  Duplicate scores at positions 2 and 3: 0.8580329418182373
+    Translation 2: Did you fall from the sky?
+    Translation 3: Did you fall from the sky?
+    ✅ Translations match!
+Row 169 contains duplicated scores: [0.87430888 0.87071609 0.87430888 0.87872142]
+  Duplicate scores at positions 0 and 2: 0.8743088841438293
+    Translation 0: I want my misfortunes to be taken seriously.
+    Translation 2: I want my misfortunes to be taken seriously.
+    ✅ Translations match!
