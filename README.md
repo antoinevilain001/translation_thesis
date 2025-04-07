@@ -1,5 +1,23 @@
 # translation_thesis
-This project connects to both a Google Translate and ChatGPT in order to translate between them, and stores the user's preferred translation.
+This project implements a translation app which connects to Google Translate, ChatGPT, and DeepL. The app allows the user to input a text to translate and provide one result for each of the translators. The user can then store a preferred translation.
+
+This project also performs an analysis on data which has been collected using the above method.
+
+### Overview of Repository Directory Structure
+- data_collection_app/
+    - implements a translation app which connects only to Google Translate and ChatGPT 4o-mini, and only allows the storage of a binary correct / incorrect preferred translation
+- my_solution_app/
+    - implements a translation app which connects to Google Translate, ChatGPT 4o, ChatGPT 4o-mini, and DeepL. It is designed for the storage of a 1-5 rating input for each translator.
+- translation_analysis/
+    - analysis1/
+        - /analysis1.ipynb
+            - performs the quantitative analysis of the binary data_collection_app data
+        - /analysis2.ipynb
+            - performs the quantitative analysis of the numerical my_solution_app data
+    - comet_examples/
+        - some simple examples of using the COMET evaluator, used just for reference.
+    - public_database/
+        - stores a public translation database used for one or more of the analysis. The citation is in /readme.md
 
 ### Windows Setup
 ```
