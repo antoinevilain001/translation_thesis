@@ -44,6 +44,8 @@ obtained from https://www.kaggle.com/datasets/lonnieqin/englishspanish-translati
 
 ### COMET evaluator
 https://github.com/Unbabel/COMET
+- requires HUGGINGFACE_TOKEN which can be set by following the instructions in the above repository
+    - should be free, but will require accepting the licensing agreements
 - Unbabel/XCOMET-XL supposedly has better error analysis than Unbabel/wmt20-comet-qe-da
     - better as defined by being able to export a list of the errors found
 - also some ways to analyze directly from the command line (does still appear to take a few minutes to run)
